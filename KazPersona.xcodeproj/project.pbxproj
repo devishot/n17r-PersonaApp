@@ -13,6 +13,7 @@
 		B4AD0AB21D4B310B00E4E97F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4AD0AB11D4B310B00E4E97F /* Assets.xcassets */; };
 		B4AD0AB51D4B310B00E4E97F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */; };
 		B4AD0AC01D4B310C00E4E97F /* KazPersonaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD0ABF1D4B310C00E4E97F /* KazPersonaUITests.swift */; };
+		B4D13EBE1D4E4635003E1526 /* booksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B4AD0ABB1D4B310C00E4E97F /* KazPersonaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KazPersonaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AD0ABF1D4B310C00E4E97F /* KazPersonaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KazPersonaUITests.swift; sourceTree = "<group>"; };
 		B4AD0AC11D4B310C00E4E97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = booksCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				B4AD0AAA1D4B310B00E4E97F /* AppDelegate.swift */,
 				B4AD0AAC1D4B310B00E4E97F /* ViewController.swift */,
+				B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */,
 				B4AD0AAE1D4B310B00E4E97F /* Main.storyboard */,
 				B4AD0AB11D4B310B00E4E97F /* Assets.xcassets */,
 				B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4AD0AAD1D4B310B00E4E97F /* ViewController.swift in Sources */,
+				B4D13EBE1D4E4635003E1526 /* booksCollectionViewCell.swift in Sources */,
 				B4AD0AAB1D4B310B00E4E97F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +390,7 @@
 				B4AD0AC61D4B310C00E4E97F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4AD0AC71D4B310C00E4E97F /* Build configuration list for PBXNativeTarget "KazPersonaUITests" */ = {
 			isa = XCConfigurationList;
@@ -394,6 +399,7 @@
 				B4AD0AC91D4B310C00E4E97F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

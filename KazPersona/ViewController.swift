@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,  UITableViewDelegate {
 
     @IBOutlet weak var speakerProfileImageView: UIImageView!
     @IBOutlet weak var speakerNameLable: UILabel!
@@ -22,11 +22,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var personDescriptionLabel: UILabel!
     @IBOutlet weak var personDescriptionTextView: UITextView!
     
+    @IBOutlet weak var linksTableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        
         speakerProfileImageView.image = UIImage(named:("profile_speaker"))
+      
+        
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

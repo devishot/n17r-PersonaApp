@@ -14,6 +14,8 @@
 		B4AD0AB51D4B310B00E4E97F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */; };
 		B4AD0AC01D4B310C00E4E97F /* KazPersonaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD0ABF1D4B310C00E4E97F /* KazPersonaUITests.swift */; };
 		B4D13EBE1D4E4635003E1526 /* booksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */; };
+		B4D13EC01D4F485B003E1526 /* linksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D13EBF1D4F485B003E1526 /* linksTableViewCell.swift */; };
+		B4D13EC21D4F4B4B003E1526 /* linksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D13EC11D4F4B4B003E1526 /* linksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		B4AD0ABF1D4B310C00E4E97F /* KazPersonaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KazPersonaUITests.swift; sourceTree = "<group>"; };
 		B4AD0AC11D4B310C00E4E97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = booksCollectionViewCell.swift; sourceTree = "<group>"; };
+		B4D13EBF1D4F485B003E1526 /* linksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linksTableViewCell.swift; sourceTree = "<group>"; };
+		B4D13EC11D4F4B4B003E1526 /* linksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linksTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				B4AD0AAC1D4B310B00E4E97F /* ViewController.swift */,
 				B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */,
 				B4AD0AAE1D4B310B00E4E97F /* Main.storyboard */,
+				B4D13EBF1D4F485B003E1526 /* linksTableViewCell.swift */,
+				B4D13EC11D4F4B4B003E1526 /* linksTableViewController.swift */,
 				B4AD0AB11D4B310B00E4E97F /* Assets.xcassets */,
 				B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */,
 				B4AD0AB61D4B310B00E4E97F /* Info.plist */,
@@ -203,6 +209,8 @@
 				B4AD0AAD1D4B310B00E4E97F /* ViewController.swift in Sources */,
 				B4D13EBE1D4E4635003E1526 /* booksCollectionViewCell.swift in Sources */,
 				B4AD0AAB1D4B310B00E4E97F /* AppDelegate.swift in Sources */,
+				B4D13EC21D4F4B4B003E1526 /* linksTableViewController.swift in Sources */,
+				B4D13EC01D4F485B003E1526 /* linksTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

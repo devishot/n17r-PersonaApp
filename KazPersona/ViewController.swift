@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,  UITableViewDelegate {
 
     @IBOutlet weak var speakerProfileImageView: UIImageView!
     @IBOutlet weak var speakerNameLable: UILabel!

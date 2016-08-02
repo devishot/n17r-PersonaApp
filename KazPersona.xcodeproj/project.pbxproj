@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		521E12E21D4F75B20038DAE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521E12E11D4F75B20038DAE2 /* GoogleService-Info.plist */; };
+		526D2A211D50667500BCFE6C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 526D2A201D50667500BCFE6C /* Podfile */; };
+		526D2A231D506BFB00BCFE6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 526D2A221D506BFB00BCFE6C /* GoogleService-Info.plist */; };
 		7628AABA177FB3590622BD0C /* Pods_KazPersonaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC580FF095E25A065857EBAD /* Pods_KazPersonaUITests.framework */; };
 		7EFC388275D5247B2C5E3C40 /* Pods_KazPersona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC4FD87C675B4CDD624BF09 /* Pods_KazPersona.framework */; };
 		B4AD0AAB1D4B310B00E4E97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD0AAA1D4B310B00E4E97F /* AppDelegate.swift */; };
@@ -17,8 +18,8 @@
 		B4AD0AB51D4B310B00E4E97F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */; };
 		B4AD0AC01D4B310C00E4E97F /* KazPersonaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD0ABF1D4B310C00E4E97F /* KazPersonaUITests.swift */; };
 		B4D13EBE1D4E4635003E1526 /* booksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */; };
-		B4D13EC01D4F485B003E1526 /* linksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D13EBF1D4F485B003E1526 /* linksTableViewCell.swift */; };
-		B4D13EC21D4F4B4B003E1526 /* linksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D13EC11D4F4B4B003E1526 /* linksTableViewController.swift */; };
+		B4D13EC01D4F485B003E1526 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		B4D13EC21D4F4B4B003E1526 /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +35,8 @@
 /* Begin PBXFileReference section */
 		29CC530AE8BDC4B8F0798BB1 /* Pods-KazPersona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazPersona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KazPersona/Pods-KazPersona.debug.xcconfig"; sourceTree = "<group>"; };
 		45F31D79CBEE9D77C688A2B0 /* Pods-KazPersonaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazPersonaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KazPersonaUITests/Pods-KazPersonaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		521E12E11D4F75B20038DAE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		526D2A201D50667500BCFE6C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		526D2A221D506BFB00BCFE6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AC4FD87C675B4CDD624BF09 /* Pods_KazPersona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KazPersona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AD0AA71D4B310B00E4E97F /* KazPersona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KazPersona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AD0AAA1D4B310B00E4E97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,8 @@
 		B4AD0A9E1D4B310B00E4E97F = {
 			isa = PBXGroup;
 			children = (
+				526D2A201D50667500BCFE6C /* Podfile */,
+				526D2A221D506BFB00BCFE6C /* GoogleService-Info.plist */,
 				B4AD0AA91D4B310B00E4E97F /* KazPersona */,
 				B4AD0ABE1D4B310C00E4E97F /* KazPersonaUITests */,
 				B4AD0AA81D4B310B00E4E97F /* Products */,
@@ -110,12 +114,9 @@
 				B4AD0AAC1D4B310B00E4E97F /* ViewController.swift */,
 				B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */,
 				B4AD0AAE1D4B310B00E4E97F /* Main.storyboard */,
-				B4D13EBF1D4F485B003E1526 /* linksTableViewCell.swift */,
-				B4D13EC11D4F4B4B003E1526 /* linksTableViewController.swift */,
 				B4AD0AB11D4B310B00E4E97F /* Assets.xcassets */,
 				B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */,
 				B4AD0AB61D4B310B00E4E97F /* Info.plist */,
-				521E12E11D4F75B20038DAE2 /* GoogleService-Info.plist */,
 			);
 			path = KazPersona;
 			sourceTree = "<group>";
@@ -225,10 +226,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526D2A211D50667500BCFE6C /* Podfile in Resources */,
 				B4AD0AB51D4B310B00E4E97F /* LaunchScreen.storyboard in Resources */,
-				521E12E21D4F75B20038DAE2 /* GoogleService-Info.plist in Resources */,
 				B4AD0AB21D4B310B00E4E97F /* Assets.xcassets in Resources */,
 				B4AD0AB01D4B310B00E4E97F /* Main.storyboard in Resources */,
+				526D2A231D506BFB00BCFE6C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,8 +329,8 @@
 				B4AD0AAD1D4B310B00E4E97F /* ViewController.swift in Sources */,
 				B4D13EBE1D4E4635003E1526 /* booksCollectionViewCell.swift in Sources */,
 				B4AD0AAB1D4B310B00E4E97F /* AppDelegate.swift in Sources */,
-				B4D13EC21D4F4B4B003E1526 /* linksTableViewController.swift in Sources */,
-				B4D13EC01D4F485B003E1526 /* linksTableViewCell.swift in Sources */,
+				B4D13EC21D4F4B4B003E1526 /* (null) in Sources */,
+				B4D13EC01D4F485B003E1526 /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,12 @@ target 'KazPersona' do
   pod 'Firebase/RemoteConfig'
   pod 'FirebaseUI'
 
+  pod 'Bolts'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
+
+
   target 'KazPersonaUITests' do
     inherit! :search_paths
     # Pods for testing

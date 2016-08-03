@@ -34,6 +34,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var booksImageArray = [UIImage(named: "book1"), UIImage(named: "book2"), UIImage(named: "book3"),  UIImage(named: "book4"), UIImage(named: "book5"),  UIImage(named: "book6"), UIImage(named: "book7")]
     var articles: [[String: String]] = []
+    
+    let logoIconsImageArray = [UIImage(named: "esquire_logo"), UIImage(named: "buro_logo"), UIImage(named: "chronicle_logo"), UIImage(named: "kursiv_logo")]
+    let backgroundImagesArray = [UIImage(named:"bacground_link"), UIImage(named:"background_buro"), UIImage(named:"background_chronicle"), UIImage(named:"background_kursiv")]
 
 
     override func viewDidLoad() {
@@ -120,7 +123,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         // Configure Cell
         cell.linksTitleLabel?.text = article["title"]
-
+        cell.logoImageView.image = self.logoIconsImageArray[indexPath.row]
+        cell.linksBackgroundImageView.image = self.backgroundImagesArray[indexPath.row]
         return cell
     }
 

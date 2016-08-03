@@ -11,7 +11,7 @@ import UIKit
 class linksTableViewController: UITableViewController {
 
     
-    let logoIconsImageArray = [UIImage(named: "esquire_logo"), UIImage(named: "esquire_logo"), UIImage(named: "esquire_logo")]
+   // let logoIconsImageArray = [UIImage(named: "esquire_logo"), UIImage(named: "esquire_logo"), UIImage(named: "esquire_logo")]
     let linkContentName = ["интересное интервью", "very interesting interview"]
     
     
@@ -49,7 +49,7 @@ class linksTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell2 = tableView.dequeueReusableCellWithIdentifier("tableViewCell", forIndexPath: indexPath) as! linksTableViewCell
        
-        cell2.logoImageView.image = self.logoIconsImageArray[indexPath.row]
+      //  cell2.logoImageView.image = self.logoIconsImageArray[indexPath.row]
     
         return cell2
     }

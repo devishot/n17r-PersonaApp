@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import Firebase
+import FBSDKCoreKit
+import FBSDKLoginKit
+
 
 class loginViewController: UIViewController {
 
-    @IBOutlet weak var loginBackgroundImageView: UIImageView!
-    @IBOutlet weak var loginBlurVisualEffectView: UIVisualEffectView!
-    @IBOutlet weak var appTitleLabel: UILabel!
-    @IBOutlet weak var descriptionTitleLabel: UILabel!
+    @IBOutlet weak var loginBackgroundImage: UIImageView!
     
-    @IBAction func loginButton(sender: AnyObject) {
+    @IBAction func touchLoginButton(sender: UIButton) {
+
+        let facebookLogin = FBSDKLoginManager();
+        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self) { (result, error) in
+            if FBSDKAccessToken.currentAccessToken() != nil {
+                let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString);
+                
+                FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
+                    if error == nil {
+                        print("user: \(user?.displayName)");
+                    } else {
+                        print(error.debugDescription);
+                    }
+                })
+            }
+        }
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -1,0 +1,6 @@
+framework module Pods_KazPersona {
+  umbrella header "Pods-KazPersona-umbrella.h"
+
+  export *
+  module * { export * }
+}

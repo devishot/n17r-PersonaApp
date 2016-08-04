@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O7t-oa-87H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O7t-oa-87H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="mUl-ev-eMH">
             <objects>
-                <viewController id="O7t-oa-87H" customClass="loginViewController" sceneMemberID="viewController">
+                <viewController id="O7t-oa-87H" customClass="loginViewController" customModule="KazPersona" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HPS-Kv-XYv"/>
                         <viewControllerLayoutGuide type="bottom" id="nYY-Ud-uuk"/>
@@ -48,7 +48,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="популярные личности казнета" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40w-ZK-QAQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что думают о популярных личностях казнета" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40w-ZK-QAQ">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,7 +76,7 @@
                                                 </mask>
                                             </variation>
                                             <connections>
-                                                <action selector="loginButton:" destination="O7t-oa-87H" eventType="touchUpInside" id="Wpx-un-qKG"/>
+                                                <action selector="touchLoginButton:" destination="O7t-oa-87H" eventType="touchUpInside" id="ric-Yo-Ofr"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -176,10 +176,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="appTitleLabel" destination="VLy-4C-fqF" id="u0X-9s-YY4"/>
-                        <outlet property="descriptionTitleLabel" destination="40w-ZK-QAQ" id="n9c-IQ-FYq"/>
-                        <outlet property="loginBackgroundImageView" destination="1HE-gA-nfD" id="9ti-2J-Xz3"/>
-                        <outlet property="loginBlurVisualEffectView" destination="meg-LY-3F0" id="M8t-KM-eRY"/>
+                        <outlet property="loginBackgroundImage" destination="1HE-gA-nfD" id="cXc-DY-MfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOA-sU-XxB" userLabel="First Responder" sceneMemberID="firstResponder"/>

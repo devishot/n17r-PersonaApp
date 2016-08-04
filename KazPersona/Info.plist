@@ -37,6 +37,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbauth2</string>
+    </array>
     <key>CFBundleURLTypes</key>
     <array>
         <dict>

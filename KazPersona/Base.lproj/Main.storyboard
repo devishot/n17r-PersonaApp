@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O7t-oa-87H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O7t-oa-87H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="mUl-ev-eMH">
             <objects>
-                <viewController id="O7t-oa-87H" customClass="loginViewController" sceneMemberID="viewController">
+                <viewController id="O7t-oa-87H" customClass="loginViewController" customModule="KazPersona" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HPS-Kv-XYv"/>
                         <viewControllerLayoutGuide type="bottom" id="nYY-Ud-uuk"/>
@@ -48,7 +48,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="популярные личности казнета" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40w-ZK-QAQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что думают о популярных личностях казнета" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40w-ZK-QAQ">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,7 +76,7 @@
                                                 </mask>
                                             </variation>
                                             <connections>
-                                                <action selector="loginButton:" destination="O7t-oa-87H" eventType="touchUpInside" id="Wpx-un-qKG"/>
+                                                <action selector="touchLoginButton:" destination="O7t-oa-87H" eventType="touchUpInside" id="ric-Yo-Ofr"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -98,15 +98,15 @@
                                             <exclude reference="2AP-HQ-VsZ"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="Q2T-0X-9ox"/>
-                                            <exclude reference="qNd-RZ-LHp"/>
-                                            <exclude reference="qhf-Vw-7un"/>
-                                            <exclude reference="2bT-ns-SKm"/>
-                                            <exclude reference="6qW-Lj-8SL"/>
-                                            <exclude reference="ftr-cN-kzU"/>
                                             <exclude reference="STE-UN-ZRx"/>
                                             <exclude reference="utZ-2m-QhF"/>
                                             <exclude reference="x0O-2b-hob"/>
+                                            <exclude reference="2bT-ns-SKm"/>
+                                            <exclude reference="6qW-Lj-8SL"/>
+                                            <exclude reference="ftr-cN-kzU"/>
+                                            <exclude reference="Q2T-0X-9ox"/>
+                                            <exclude reference="qNd-RZ-LHp"/>
+                                            <exclude reference="qhf-Vw-7un"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -116,15 +116,15 @@
                                             <include reference="2AP-HQ-VsZ"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="Q2T-0X-9ox"/>
-                                            <include reference="qNd-RZ-LHp"/>
-                                            <include reference="qhf-Vw-7un"/>
-                                            <include reference="2bT-ns-SKm"/>
-                                            <include reference="6qW-Lj-8SL"/>
-                                            <include reference="ftr-cN-kzU"/>
                                             <include reference="STE-UN-ZRx"/>
                                             <include reference="utZ-2m-QhF"/>
                                             <include reference="x0O-2b-hob"/>
+                                            <include reference="2bT-ns-SKm"/>
+                                            <include reference="6qW-Lj-8SL"/>
+                                            <include reference="ftr-cN-kzU"/>
+                                            <include reference="Q2T-0X-9ox"/>
+                                            <include reference="qNd-RZ-LHp"/>
+                                            <include reference="qhf-Vw-7un"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -148,14 +148,14 @@
                                 <exclude reference="meg-LY-3F0"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="S9e-Ne-pqj"/>
+                                <exclude reference="YBv-4s-WVW"/>
                                 <exclude reference="Hk5-QT-Wzf"/>
                                 <exclude reference="wHe-K7-XpG"/>
                                 <exclude reference="zh3-Zz-tda"/>
                                 <exclude reference="4Et-N6-Mvp"/>
                                 <exclude reference="I4Y-f1-Lgq"/>
                                 <exclude reference="qWa-Si-59Y"/>
-                                <exclude reference="S9e-Ne-pqj"/>
-                                <exclude reference="YBv-4s-WVW"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -164,22 +164,19 @@
                                 <include reference="meg-LY-3F0"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="S9e-Ne-pqj"/>
+                                <include reference="YBv-4s-WVW"/>
                                 <include reference="Hk5-QT-Wzf"/>
                                 <include reference="wHe-K7-XpG"/>
                                 <include reference="zh3-Zz-tda"/>
                                 <include reference="4Et-N6-Mvp"/>
                                 <include reference="I4Y-f1-Lgq"/>
                                 <include reference="qWa-Si-59Y"/>
-                                <include reference="S9e-Ne-pqj"/>
-                                <include reference="YBv-4s-WVW"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="appTitleLabel" destination="VLy-4C-fqF" id="u0X-9s-YY4"/>
-                        <outlet property="descriptionTitleLabel" destination="40w-ZK-QAQ" id="n9c-IQ-FYq"/>
-                        <outlet property="loginBackgroundImageView" destination="1HE-gA-nfD" id="9ti-2J-Xz3"/>
-                        <outlet property="loginBlurVisualEffectView" destination="meg-LY-3F0" id="M8t-KM-eRY"/>
+                        <outlet property="loginBackgroundImage" destination="1HE-gA-nfD" id="cXc-DY-MfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOA-sU-XxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,6 +192,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9t5-C1-qVS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bVb-sF-YyH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

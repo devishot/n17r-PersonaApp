@@ -14,6 +14,8 @@ import FBSDKLoginKit
 
 class loginViewController: UIViewController {
 
+    var leaderBoard: UIViewController? = nil
+
     @IBOutlet weak var loginBackgroundImage: UIImageView!
 
     @IBAction func touchLoginButton(sender: UIButton) {
@@ -21,15 +23,7 @@ class loginViewController: UIViewController {
 
         facebookLogin.logInWithReadPermissions(["email", "user_friends"], fromViewController: self) { (result, error) in
             if FBSDKAccessToken.currentAccessToken() != nil {
-                let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString);
-                
-                FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
-                    if error == nil {
-                        print("user: \(user?.displayName)");
-                    } else {
-                        print(error.debugDescription);
-                    }
-                })
+                self.completeSignIn()
             }
         }
     }
@@ -38,9 +32,26 @@ class loginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        self.leaderBoard = mainStoryboard.instantiateViewControllerWithIdentifier("leaderBoard") as UIViewController
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
 
         // redirect if already logged in
         if FBSDKAccessToken.currentAccessToken() != nil {
+
+            if let user = FIRAuth.auth()?.currentUser {
+                print("Already logged in, user: \(user.displayName)");
+                // redirect to LeaderBoard
+                self.presentViewController(self.leaderBoard!, animated: true, completion: nil)
+
+            } else {
+                print("Warning: not logged in Firebase")
+                // sign into Firebae and redirect to LeaderBoard
+                self.completeSignIn()
+            }
         }
     }
 
@@ -48,6 +59,22 @@ class loginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
+
+    // Sign into Firebase and redirect to MainViewController
+    func completeSignIn() {
+        let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString);
+        
+        FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
+            if error == nil {
+                print("Firebase login: \(user?.displayName)");
+
+                // redirect to LeaderBoard
+                self.presentViewController(self.leaderBoard!, animated: true, completion: nil)
+
+            } else {
+                print(error.debugDescription);
+            }
+        })
+    }
 }

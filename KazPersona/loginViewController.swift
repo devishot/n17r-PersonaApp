@@ -15,11 +15,11 @@ import FBSDKLoginKit
 class loginViewController: UIViewController {
 
     @IBOutlet weak var loginBackgroundImage: UIImageView!
-    
-    @IBAction func touchLoginButton(sender: UIButton) {
 
+    @IBAction func touchLoginButton(sender: UIButton) {
         let facebookLogin = FBSDKLoginManager();
-        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self) { (result, error) in
+
+        facebookLogin.logInWithReadPermissions(["email", "user_friends"], fromViewController: self) { (result, error) in
             if FBSDKAccessToken.currentAccessToken() != nil {
                 let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString);
                 
@@ -38,6 +38,10 @@ class loginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        // redirect if already logged in
+        if FBSDKAccessToken.currentAccessToken() != nil {
+        }
     }
 
     override func didReceiveMemoryWarning() {

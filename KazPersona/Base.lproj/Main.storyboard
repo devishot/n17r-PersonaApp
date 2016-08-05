@@ -782,24 +782,6 @@
             </objects>
             <point key="canvasLocation" x="2157" y="243"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="R94-mf-fT6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yXI-eW-rKr" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wbo-Ss-FkI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="nvw-JL-VfO" kind="relationship" relationship="rootViewController" id="Nad-Vs-IMB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8p0-GL-wv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="448.5" y="246"/>
-        </scene>
     </scenes>
     <resources>
         <image name="fb_logo" width="17" height="18"/>

@@ -11,9 +11,6 @@ import UIKit
 class linksTableViewController: UITableViewController {
 
     
-   // let logoIconsImageArray = [UIImage(named: "esquire_logo"), UIImage(named: "esquire_logo"), UIImage(named: "esquire_logo")]
-    let linkContentName = ["интересное интервью", "very interesting interview"]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

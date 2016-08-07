@@ -119,7 +119,6 @@
 			children = (
 				526D2A221D506BFB00BCFE6C /* GoogleService-Info.plist */,
 				B4AD0AAA1D4B310B00E4E97F /* AppDelegate.swift */,
-				B4932AC71D52451F002A8098 /* loginViewController.swift */,
 				B4AD0AAC1D4B310B00E4E97F /* ViewController.swift */,
 				B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */,
 				523F99671D5070D900483A70 /* linksTableViewCell.swift */,

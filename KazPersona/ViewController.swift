@@ -10,12 +10,16 @@ import UIKit
 import Firebase
 
 
+// MARK: global variables and functions
+// here
+
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var speakerProfileImageView: UIImageView!
     @IBOutlet weak var speakerNameLable: UILabel!
     @IBOutlet weak var speakerRoleLabel: UILabel!
-    
+
     @IBOutlet weak var listOfBooksLabel: UILabel!
     @IBOutlet weak var booksCollectionView: UICollectionView!
     
@@ -23,15 +27,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var personDescriptionTextView: UITextView!
     
     @IBOutlet weak var linksTableView: UITableView!
-    
+
 
     // [START define_database_reference]
     var ref: FIRDatabaseReference!
     // [END define_database_reference]
-    
-    let cellIdentifier = "CellIdentifier"
-    let userID: String! = "abaitasov"
-    
+
+    let articleLinkCellID = "CellIdentifier"
+    var personUID: String = "abaitasov"
+    var personWithRate: [String: AnyObject] = [:]
+
     var booksImageArray = [UIImage(named: "book1"), UIImage(named: "book2"), UIImage(named: "book3"),  UIImage(named: "book4"), UIImage(named: "book5"),  UIImage(named: "book6"), UIImage(named: "book7")]
     var articles: [[String: String]] = []
     
@@ -42,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+
         // Do any additional setup after loading the view, typically from a nib.
         
         self.linksTableView.dataSource = self;
@@ -52,56 +57,88 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         ref = FIRDatabase.database().reference()
         // [END create_database_reference]
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        speakerProfileImageView.image = UIImage(named:("profile_speaker"))
 
+    override func viewWillAppear(animated: Bool) {
+        fetchAndDisplayPersonDescription()
+        fetchAndDisplayPersonArticles()
+        // fetchAndDisplayPersonPhotos()
+    }
+
+
+    // MARK: Fetch data from firebase
+    func fetchAndDisplayPersonDescription() -> Void {
         // [START read_data_once]
-        // fetch person full bio
-        ref.child("persons").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+        ref.child("persons").child(personUID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            
+            if snapshot.value is NSNull {
+                self.handleFirebaseEmptyDataError()
+                return
+            }
 
             let postDict = snapshot.value as! [String : String]
             let full_name = postDict["name"]
-            let short_bio = postDict["short_bio"]
-            let cover_url = postDict["cover_url"]
+            let description = postDict["description"]
+            
+            let followers = self.personWithRate["followers"] as! Int
 
             self.speakerNameLable.text = full_name
-            self.speakerRoleLabel.text = short_bio
-
-            if let url = NSURL(string: cover_url!), data = NSData(contentsOfURL: url)
-            {
-                self.speakerProfileImageView.image = UIImage(data: data)
-            }
+            self.speakerRoleLabel.text = String(followers)
+            self.personDescriptionTextView.text = description
 
         }) { (error) in
-            print(error.localizedDescription)
+            self.handleFirebaseConnectionError(error)
+            return
         }
         // [END read_data_once]
-        
+    }
 
+    func fetchAndDisplayPersonArticles() -> Void {
         // [START read_data_once]
-        // fetch person articles
-        ref.child("person_articles").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+        ref.child("person_articles").child(personUID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+
+            if snapshot.value is NSNull {
+                self.handleFirebaseEmptyDataError()
+                return
+            }
 
             let postArray = snapshot.value as! [[String: String]]
 
             self.articles = postArray
-
-            // LOG
-            print(self.articles)
-
             // update linksTableView
             self.linksTableView.reloadData()
 
         }) { (error) in
-            print(error.localizedDescription)
+            self.handleFirebaseConnectionError(error)
         }
         // [END read_data_once]
     }
-    
-    
+
+    func fetchAndDisplayPersonPhotos() -> Void {
+        // [START read_data_once]
+        ref.child("person_photos").child(personUID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            
+            if snapshot.value is NSNull {
+                self.handleFirebaseEmptyDataError()
+                return
+            }
+            
+            let photos = snapshot.value as! [String]
+
+            /*
+            if let url = NSURL(string: cover_url!), data = NSData(contentsOfURL: url)
+            {
+                self.speakerProfileImageView.image = UIImage(data: data)
+            }
+             */
+        }) { (error) in
+            self.handleFirebaseConnectionError(error)
+        }
+        // [END read_data_once]
+    }
+
+    // MARK: Collection View of Books
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 7
+        return 7
     }
    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -113,7 +150,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
     }
 
-    // MARK: Table View Data Source Methods
+
+    // MARK: Table View Data Source Methods of Article links
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -123,7 +161,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! linksTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(articleLinkCellID, forIndexPath: indexPath) as! linksTableViewCell
 
         // Fetch Article
         let article = self.articles[indexPath.row] as [String: String]
@@ -136,7 +174,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
 
-    // MARK: Table View Delegate Methods
+    // MARK: Table View Delegate Methods of Article links
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         // Fetch Article
@@ -145,6 +183,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // LOG
         print(indexPath.row, article)
     }
-    
+
+
+    // MARK: error handlers
+    func handleFirebaseEmptyDataError() -> Void {
+        // [START display_error_modal]
+        let alertController = UIAlertController(title: "Извините,", message: "ошибка на сервере", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+        }))
+
+        presentViewController(alertController, animated: true, completion: nil)
+        // [END display_error_modal]
+    }
+
+    func handleFirebaseConnectionError(error: NSError) -> Void {
+        print("firebase.error.handler", error.localizedDescription)
+
+        // [START display_error_modal]
+        let alertController = UIAlertController(title: "Попробуйте снова,", message: "проверьте интернет подключение", preferredStyle: UIAlertControllerStyle.Alert)
+
+        alertController.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+        }))
+        
+        presentViewController(alertController, animated: true, completion: nil)
+        // [END display_error_modal]
+    }
 }
 

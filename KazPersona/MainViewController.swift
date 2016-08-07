@@ -17,6 +17,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var ref: FIRDatabaseReference!
     // [END define_database_reference]
 
+    var personDetailViewSegueIdentifier : String = "personDetailViewSegue"
     var personsRate : [[String: AnyObject]] = []
 
 
@@ -103,6 +104,24 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         // LOG
         print(indexPath.row, uid, personWithRate)
+
+        // redirect to detail view by uid
+        performSegueWithIdentifier(personDetailViewSegueIdentifier, sender: self)
+
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == self.personDetailViewSegueIdentifier {
+            let indexPath = self.leaderboardTableView.indexPathForSelectedRow
+            let detailViewController = segue.destinationViewController as! ViewController
+
+            // fetch data
+            let personWithRate = self.personsRate[indexPath!.row]
+            let uid = personWithRate["uid"] as! String
+
+            detailViewController.personUID = uid
+            detailViewController.personWithRate = personWithRate
+        }
     }
 
 }

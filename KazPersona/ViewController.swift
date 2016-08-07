@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var linksTableView: UITableView!
     
-    
+
     // [START define_database_reference]
     var ref: FIRDatabaseReference!
     // [END define_database_reference]
@@ -44,6 +44,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.linksTableView.dataSource = self;
+        self.linksTableView.delegate = self;
 
         // [START create_database_reference]
         ref = FIRDatabase.database().reference()
@@ -75,6 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         // [END read_data_once]
         
+
         // [START read_data_once]
         // fetch person articles
         ref.child("person_articles").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
@@ -86,6 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // LOG
             print(self.articles)
 
+            // update linksTableView
             self.linksTableView.reloadData()
 
         }) { (error) in

@@ -1,19 +1,20 @@
 //
-//  linksTableViewCell.swift
+//  FeedbackTableViewCell.swift
 //  KazPersona
 //
-//  Created by Aigerim'sMac on 01.08.16.
+//  Created by Aigerim'sMac on 08.08.16.
 //  Copyright © 2016 n17r. All rights reserved.
 //
 
 import UIKit
 
-class linksTableViewCell: UITableViewCell {
+class FeedbackTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var linksBlurView: UIVisualEffectView!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var linksTitleLabel: UILabel!
-   
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var feedbackTextView: UITextView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,6 +22,8 @@ class linksTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
         // Configure the view for the selected state
     }
+
 }

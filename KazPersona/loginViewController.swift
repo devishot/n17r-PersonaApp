@@ -17,7 +17,6 @@ class loginViewController: UIViewController {
     var leaderBoard: UIViewController? = nil
 
     @IBOutlet weak var loginBackgroundImage: UIImageView!
-
     @IBAction func touchLoginButton(sender: UIButton) {
         let facebookLogin = FBSDKLoginManager();
 

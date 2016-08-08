@@ -16,17 +16,33 @@ import Firebase
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var speakerProfileImageView: UIImageView!
-    @IBOutlet weak var speakerNameLable: UILabel!
-    @IBOutlet weak var speakerRoleLabel: UILabel!
+    @IBOutlet weak var mainScrollView: UIScrollView!
+    @IBOutlet weak var profileImageCollectionView: UIView!
 
-    @IBOutlet weak var listOfBooksLabel: UILabel!
-    @IBOutlet weak var booksCollectionView: UICollectionView!
+
+    @IBOutlet weak var speakerNameLabel: UILabel!
+    @IBOutlet weak var speakerFollowersNumber: UILabel!
     
     @IBOutlet weak var personDescriptionLabel: UILabel!
     @IBOutlet weak var personDescriptionTextView: UITextView!
     
+    @IBOutlet weak var listOfBooksLabel: UILabel!
+    @IBOutlet weak var booksCollectionView: UICollectionView!
+
+    
     @IBOutlet weak var linksTableView: UITableView!
+    @IBOutlet weak var feedbackTableView: UITableView!
+    
+    @IBOutlet weak var leaveFeedbackTextView: UITextView!
+    
+    @IBOutlet weak var enterNameTextView: UITextView!
+    
+    
+
+    @IBAction func sendFeedbackButton(sender: UIButton) {
+    }
+    
+    
 
 
     // [START define_database_reference]
@@ -81,8 +97,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let followers = self.personWithRate["followers"] as! Int
 
-            self.speakerNameLable.text = full_name
-            self.speakerRoleLabel.text = String(followers)
+            self.speakerNameLabel.text = full_name
+            self.speakerFollowersNumber.text = String(followers)
             self.personDescriptionTextView.text = description
 
         }) { (error) in
@@ -169,7 +185,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Configure Cell
         cell.linksTitleLabel?.text = article["title"]
         cell.logoImageView.image = self.logoIconsImageArray[indexPath.row]
-        cell.linksBackgroundImageView.image = self.backgroundImagesArray[indexPath.row]
+      //  cell.linksBackgroundImageView.image = self.backgroundImagesArray[indexPath.row]
         return cell
     }
 

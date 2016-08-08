@@ -10,11 +10,12 @@ import UIKit
 
 class FeedbackTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var userFollowersNumberLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var feedbackTextView: UITextView!
     
-    
+    @IBOutlet weak var followerIconImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -36,10 +36,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var enterNameTextView: UITextView!
     
+    @IBOutlet weak var sendFeedbackButton: UIButton!
 
     @IBAction func sendFeedbackButton(sender: UIButton) {
+        
+        
     }
 
+    @IBOutlet weak var followersIcon: UIImageView!
 
     // [START define_database_reference]
     var ref: FIRDatabaseReference!
@@ -58,6 +62,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
+        self.followersIcon.image = UIImage(named: "followers")
+        
+        // changes for button border
+        sendFeedbackButton.layer.borderColor = UIColor.blackColor().CGColor
+        sendFeedbackButton.layer.cornerRadius = 5
+        sendFeedbackButton.layer.borderWidth = 1
+        
+        // MARK: changes to auto layout of TextView
+        let contentSize = personDescriptionTextView.sizeThatFits(personDescriptionTextView.bounds.size)
+        var frame = personDescriptionTextView.frame
+        frame.size.height = contentSize.height
+        personDescriptionTextView.frame = frame
+        
         
 
         // Do any additional setup after loading the view, typically from a nib.

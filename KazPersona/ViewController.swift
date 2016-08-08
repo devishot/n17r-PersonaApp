@@ -17,19 +17,18 @@ import Firebase
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var mainScrollView: UIScrollView!
+    @IBOutlet weak var personFollowers: UILabel!
+    @IBOutlet weak var personName: UILabel!
+
     @IBOutlet weak var profileImageCollectionView: UIView!
 
 
-    @IBOutlet weak var speakerNameLabel: UILabel!
-    @IBOutlet weak var speakerFollowersNumber: UILabel!
-    
     @IBOutlet weak var personDescriptionLabel: UILabel!
     @IBOutlet weak var personDescriptionTextView: UITextView!
     
     @IBOutlet weak var listOfBooksLabel: UILabel!
     @IBOutlet weak var booksCollectionView: UICollectionView!
 
-    
     @IBOutlet weak var linksTableView: UITableView!
     @IBOutlet weak var feedbackTableView: UITableView!
     
@@ -37,12 +36,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var enterNameTextView: UITextView!
     
-    
 
     @IBAction func sendFeedbackButton(sender: UIButton) {
     }
-    
-    
 
 
     // [START define_database_reference]
@@ -97,8 +93,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let followers = self.personWithRate["followers"] as! Int
 
-            self.speakerNameLabel.text = full_name
-            self.speakerFollowersNumber.text = String(followers)
+            self.personName.text = full_name
+            self.personFollowers.text = String(followers)
             self.personDescriptionTextView.text = description
 
         }) { (error) in

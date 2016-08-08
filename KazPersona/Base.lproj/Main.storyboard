@@ -363,7 +363,7 @@
                                             <outlet property="numberOfFollowersLabel" destination="dBD-ya-Vxq" id="cSg-0x-bIV"/>
                                             <outlet property="orderInLeaderboardLabel" destination="3JH-4t-WVb" id="vYN-xf-EzV"/>
                                             <outlet property="personsRoundImageView" destination="U2b-Eq-55I" id="Qoz-Xx-66b"/>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="personDetailViewSegue" id="HF1-1V-aeh"/>
+                                            <segue destination="7wR-UK-odP" kind="showDetail" identifier="personDetailViewSegue" id="LI5-Yy-ZnY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -428,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnB-Q5-fOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056" y="283"/>
+            <point key="canvasLocation" x="1158" y="253"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -442,15 +442,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="400" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8K-QW-pX5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem id="cgZ-da-46c"/>
-                                </items>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="20" width="400" height="44"/>
-                                </variation>
-                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-mk-2dR">
                                 <rect key="frame" x="-20" y="44" width="440" height="715"/>
                                 <subviews>
@@ -916,40 +907,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LRc-mk-2dR" firstAttribute="top" secondItem="O8K-QW-pX5" secondAttribute="bottom" id="0Fu-xE-930"/>
                             <constraint firstItem="LRc-mk-2dR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-40" id="8t1-gq-tVj"/>
                             <constraint firstItem="LRc-mk-2dR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="At2-t7-VwF"/>
                             <constraint firstAttribute="bottomMargin" secondItem="LRc-mk-2dR" secondAttribute="bottom" constant="-1" id="RhT-K6-Api"/>
                             <constraint firstItem="LRc-mk-2dR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cb8-Sz-KN7"/>
-                            <constraint firstItem="LRc-mk-2dR" firstAttribute="centerX" secondItem="O8K-QW-pX5" secondAttribute="centerX" id="rLb-wC-6ah"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="O8K-QW-pX5"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="0Fu-xE-930"/>
                                 <exclude reference="8t1-gq-tVj"/>
                                 <exclude reference="At2-t7-VwF"/>
                                 <exclude reference="RhT-K6-Api"/>
                                 <exclude reference="cb8-Sz-KN7"/>
-                                <exclude reference="rLb-wC-6ah"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="O8K-QW-pX5"/>
-                            </mask>
                             <mask key="constraints">
-                                <include reference="0Fu-xE-930"/>
                                 <include reference="8t1-gq-tVj"/>
                                 <include reference="At2-t7-VwF"/>
                                 <include reference="RhT-K6-Api"/>
                                 <include reference="cb8-Sz-KN7"/>
-                                <include reference="rLb-wC-6ah"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="9c3-ma-lux"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="1000"/>
                     <connections>
@@ -965,7 +945,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="253"/>
+            <point key="canvasLocation" x="3111" y="575"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="beb-O4-gMi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7wR-UK-odP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2If-f8-rrz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7Rc-2H-7Ob"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RLQ-Pb-37Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2109" y="575"/>
         </scene>
     </scenes>
     <resources>

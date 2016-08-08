@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewWillAppear(animated: Bool) {
         fetchAndDisplayPersonDescription()
-        fetchAndDisplayPersonArticles()
+        // fetchAndDisplayPersonArticles()
         // fetchAndDisplayPersonPhotos()
     }
 

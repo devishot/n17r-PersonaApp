@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Kingfisher
+
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -28,7 +30,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: UIFont(name: "Helvetica", size: 18)!
         ]
-        
+
  UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         // Do any additional setup after loading the view.
@@ -90,12 +92,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.leaderboardPersonsRoleLabel.text = biz
         cell.orderInLeaderboardLabel.text = String(indexPath.row + 1)
         cell.numberOfFollowersLabel.text = String(followers)
-/*      
-        if let url = NSURL(string: cover_url!), data = NSData(contentsOfURL: url)
+
+        if let picture = personWithRate["pic"], let picture_url = NSURL(string: picture as! String)
         {
-            self.personsRoundImageView.image = UIImage(data: data)
+            cell.personsRoundImageView.kf_setImageWithURL(picture_url)
         }
-*/
 
         return cell
     }

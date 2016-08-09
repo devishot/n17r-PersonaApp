@@ -15,6 +15,8 @@ target 'KazPersona' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
+  
+  pod 'Kingfisher', '~> 2.4'
 
 
   target 'KazPersonaUITests' do

@@ -92,7 +92,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/RemoteConfig
   - FirebaseUI
-  - Kingfisher (~> 2.4)
+  - Kingfisher (= 2.4.2)
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
@@ -116,6 +116,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   Kingfisher: 05bf8d04408aaa70fcd2c8c81b9f1d0f1ad313dd
 
-PODFILE CHECKSUM: acf384ad2a900d6339f7d833d646ba705ffb37f0
+PODFILE CHECKSUM: 8299f1b85af3b741ff505952a21c2bc99019b792
 
 COCOAPODS: 1.0.1

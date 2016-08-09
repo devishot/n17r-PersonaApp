@@ -515,13 +515,19 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NFactorialIncubator 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRe-nT-wyN">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.15013498040000001" green="0.15013498040000001" blue="0.15013498040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VkH-Th-1Sr">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="349" width="360" height="90"/>
                                 </variation>
                             </textView>
@@ -587,20 +593,27 @@
                                     </mask>
                                 </variation>
                             </visualEffectView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NFactorialIncubator 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRe-nT-wyN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Автор рейтинга" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAG-y7-fLe">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" red="0.15013498040000001" green="0.15013498040000001" blue="0.15013498040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="559" width="150" height="21"/>
+                                </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgz-eb-2gn">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Арман Ахметов"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="251" y="554" width="112" height="30"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Q0F-QU-mSS" firstAttribute="centerX" secondItem="NQP-R5-Hu9" secondAttribute="centerX" id="AJ7-Mr-5MT">
                                 <variation key="widthClass=compact" constant="-107.5"/>
-                            </constraint>
-                            <constraint firstItem="kEL-hh-pGB" firstAttribute="top" secondItem="VkH-Th-1Sr" secondAttribute="bottom" constant="206" id="DND-aW-Ocb">
-                                <variation key="widthClass=compact" constant="160"/>
                             </constraint>
                             <constraint firstItem="NQP-R5-Hu9" firstAttribute="leading" secondItem="GRe-nT-wyN" secondAttribute="trailing" constant="27" id="I1K-Tl-uxv"/>
                             <constraint firstItem="GRe-nT-wyN" firstAttribute="top" secondItem="Q0F-QU-mSS" secondAttribute="bottom" constant="14" id="O94-bD-FJ8"/>
@@ -613,17 +626,17 @@
                                 <variation key="widthClass=compact" constant="-105"/>
                             </constraint>
                             <constraint firstItem="GRe-nT-wyN" firstAttribute="leading" secondItem="Q0F-QU-mSS" secondAttribute="leading" id="cNF-Se-zPK"/>
-                            <constraint firstItem="VkH-Th-1Sr" firstAttribute="top" secondItem="GRe-nT-wyN" secondAttribute="bottom" constant="25" id="dcj-1F-btr"/>
-                            <constraint firstItem="GRe-nT-wyN" firstAttribute="leading" secondItem="VkH-Th-1Sr" secondAttribute="leading" id="fvK-9l-cg7"/>
                             <constraint firstItem="Q0F-QU-mSS" firstAttribute="trailing" secondItem="jUP-td-MoR" secondAttribute="trailingMargin" id="jTO-zG-JP2"/>
                             <constraint firstItem="Q0F-QU-mSS" firstAttribute="top" secondItem="BQo-Hb-CgX" secondAttribute="bottom" constant="16" id="mZM-lF-euq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Q0F-QU-mSS"/>
+                                <exclude reference="GRe-nT-wyN"/>
                                 <exclude reference="VkH-Th-1Sr"/>
                                 <exclude reference="NQP-R5-Hu9"/>
-                                <exclude reference="GRe-nT-wyN"/>
+                                <exclude reference="JAG-y7-fLe"/>
+                                <exclude reference="Cgz-eb-2gn"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="AJ7-Mr-5MT"/>
@@ -634,19 +647,18 @@
                                 <exclude reference="O94-bD-FJ8"/>
                                 <exclude reference="QZF-9t-HIe"/>
                                 <exclude reference="cNF-Se-zPK"/>
-                                <exclude reference="fvK-9l-cg7"/>
-                                <exclude reference="dcj-1F-btr"/>
                                 <exclude reference="I1K-Tl-uxv"/>
                                 <exclude reference="Sus-jf-4JY"/>
-                                <exclude reference="DND-aW-Ocb"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Q0F-QU-mSS"/>
+                                <include reference="GRe-nT-wyN"/>
                                 <include reference="VkH-Th-1Sr"/>
                                 <include reference="NQP-R5-Hu9"/>
-                                <include reference="GRe-nT-wyN"/>
+                                <include reference="JAG-y7-fLe"/>
+                                <include reference="Cgz-eb-2gn"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="AJ7-Mr-5MT"/>
@@ -657,11 +669,8 @@
                                 <include reference="O94-bD-FJ8"/>
                                 <include reference="QZF-9t-HIe"/>
                                 <include reference="cNF-Se-zPK"/>
-                                <include reference="fvK-9l-cg7"/>
-                                <include reference="dcj-1F-btr"/>
                                 <include reference="I1K-Tl-uxv"/>
                                 <include reference="Sus-jf-4JY"/>
-                                <include reference="DND-aW-Ocb"/>
                             </mask>
                         </variation>
                     </view>

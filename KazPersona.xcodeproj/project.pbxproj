@@ -23,6 +23,7 @@
 		B4AD0AC01D4B310C00E4E97F /* KazPersonaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD0ABF1D4B310C00E4E97F /* KazPersonaUITests.swift */; };
 		B4C0A4E01D5879590085FF48 /* SpeakerProfileImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C0A4DF1D5879580085FF48 /* SpeakerProfileImageCollectionViewCell.swift */; };
 		B4C0A4E21D58C22F0085FF48 /* FeedbackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C0A4E11D58C22F0085FF48 /* FeedbackTableViewCell.swift */; };
+		B4C0A4E41D59CCDD0085FF48 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C0A4E31D59CCDD0085FF48 /* InfoViewController.swift */; };
 		B4D13EBE1D4E4635003E1526 /* booksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */; };
 		B4D13EC01D4F485B003E1526 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B4D13EC21D4F4B4B003E1526 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -61,6 +62,7 @@
 		B4AD0AC11D4B310C00E4E97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4C0A4DF1D5879580085FF48 /* SpeakerProfileImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerProfileImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B4C0A4E11D58C22F0085FF48 /* FeedbackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewCell.swift; sourceTree = "<group>"; };
+		B4C0A4E31D59CCDD0085FF48 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = booksCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD26D13D16640BFB4961D0F2 /* Pods-KazPersona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazPersona.release.xcconfig"; path = "Pods/Target Support Files/Pods-KazPersona/Pods-KazPersona.release.xcconfig"; sourceTree = "<group>"; };
 		CC580FF095E25A065857EBAD /* Pods_KazPersonaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KazPersonaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				523F99671D5070D900483A70 /* linksTableViewCell.swift */,
 				523F99681D5070D900483A70 /* linksTableViewController.swift */,
 				B4AD0AAE1D4B310B00E4E97F /* Main.storyboard */,
+				B4C0A4E31D59CCDD0085FF48 /* InfoViewController.swift */,
 				B4C0A4DF1D5879580085FF48 /* SpeakerProfileImageCollectionViewCell.swift */,
 				B4932ACF1D5313DB002A8098 /* LeaderboardTableViewCell.swift */,
 				B4932AC91D525595002A8098 /* MainViewController.swift */,
@@ -354,6 +357,7 @@
 				B4D13EBE1D4E4635003E1526 /* booksCollectionViewCell.swift in Sources */,
 				B4932AC81D52451F002A8098 /* loginViewController.swift in Sources */,
 				B4AD0AAB1D4B310B00E4E97F /* AppDelegate.swift in Sources */,
+				B4C0A4E41D59CCDD0085FF48 /* InfoViewController.swift in Sources */,
 				B4932ACA1D525595002A8098 /* MainViewController.swift in Sources */,
 				B4D13EC21D4F4B4B003E1526 /* (null) in Sources */,
 				B4D13EC01D4F485B003E1526 /* (null) in Sources */,

@@ -66,12 +66,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
         self.followersIcon.image = UIImage(named: "followers")
         
+       
+        
         // changes for button border
         sendFeedbackButton.layer.borderColor = UIColor.blackColor().CGColor
         sendFeedbackButton.layer.cornerRadius = 5
         sendFeedbackButton.layer.borderWidth = 1
         
-        // MARK: changes to auto layout of TextView
+        leaveFeedbackTextView.layer.borderColor = UIColor.grayColor().CGColor
+        leaveFeedbackTextView.layer.cornerRadius = 5
+        leaveFeedbackTextView.layer.borderWidth = 1
+        
+        // changes to auto layout of TextView
         let contentSize = personDescriptionTextView.sizeThatFits(personDescriptionTextView.bounds.size)
         var frame = personDescriptionTextView.frame
         frame.size.height = contentSize.height

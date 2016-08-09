@@ -23,7 +23,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSFontAttributeName: UIFont(name: "Helvetica", size: 18)!
+        ]
+        
+ UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         // Do any additional setup after loading the view.
         
         self.leaderboardTableView.dataSource = self;
@@ -113,8 +120,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == self.personDetailViewSegueID {
             let indexPath = self.leaderboardTableView.indexPathForSelectedRow
-            let navController = segue.destinationViewController as! UINavigationController
-            let detailViewController = navController.topViewController as! ViewController
+            let detailViewController = segue.destinationViewController as! ViewController
 
             // fetch data
             let personWithRate = self.personsRate[indexPath!.row]

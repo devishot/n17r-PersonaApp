@@ -32,15 +32,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var linksTableView: UITableView!
     @IBOutlet weak var feedbackTableView: UITableView!
     
+    @IBOutlet weak var feedbackButton: UIButton!
     @IBOutlet weak var leaveFeedbackTextView: UITextView!
-    
-    @IBOutlet weak var enterNameTextView: UITextView!
-    
-    @IBOutlet weak var sendFeedbackButton: UIButton!
 
     @IBAction func sendFeedbackButton(sender: UIButton) {
-        
-        
+        if let text = leaveFeedbackTextView.text {
+            // send
+            // update table
+            // clear and hide keyboard
+        }
     }
 
     @IBOutlet weak var followersIcon: UIImageView!
@@ -63,15 +63,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
         self.followersIcon.image = UIImage(named: "followers")
-        
-       
-        
+
+
         // changes for button border
-        sendFeedbackButton.layer.borderColor = UIColor.blackColor().CGColor
-        sendFeedbackButton.layer.cornerRadius = 5
-        sendFeedbackButton.layer.borderWidth = 1
+        feedbackButton.layer.borderColor = UIColor.blackColor().CGColor
+        feedbackButton.layer.cornerRadius = 5
+        feedbackButton.layer.borderWidth = 1
         
         leaveFeedbackTextView.layer.borderColor = UIColor.grayColor().CGColor
         leaveFeedbackTextView.layer.cornerRadius = 5
@@ -115,7 +113,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let postDict = snapshot.value as! [String : String]
             let full_name = postDict["name"]
             let description = postDict["description"]
-            
+
             let followers = self.personWithRate["followers"] as! Int
 
             self.personName.text = full_name

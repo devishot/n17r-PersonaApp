@@ -1752,7 +1752,6 @@
                         <outlet property="personFollowers" destination="iEq-Ks-FKq" id="lOf-LP-tzv"/>
                         <outlet property="personName" destination="trb-D1-f2U" id="H8B-U1-xCo"/>
                         <outlet property="profileImageCollectionView" destination="0pS-RK-AFt" id="LGL-Qz-0JA"/>
-                        <outlet property="sendFeedbackButton" destination="8WW-f0-juZ" id="2vM-Pb-ULQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPX-8t-ir2" userLabel="First Responder" sceneMemberID="firstResponder"/>

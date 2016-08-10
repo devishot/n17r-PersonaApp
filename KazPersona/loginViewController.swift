@@ -12,6 +12,11 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 
+// MARK: Global variables
+var currentUserFacebookFriendsCount: Int? = nil;
+
+
+
 class loginViewController: UIViewController {
     
     @IBOutlet weak var loginBackgroundImage: UIImageView!
@@ -96,6 +101,9 @@ class loginViewController: UIViewController {
 
                 // completionHandler runs first
                 completionResult["friends_count"] = friendsCount
+
+                // set Global variable
+                currentUserFacebookFriendsCount = friendsCount
             }
             })
 
@@ -120,7 +128,7 @@ class loginViewController: UIViewController {
 
     func signIntoFirebase(completion: () -> Void) {
         let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString);
-        
+
         FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
             if error == nil {
                 print("Firebase login: \(user?.displayName)");

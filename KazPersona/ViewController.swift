@@ -36,10 +36,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var leaveFeedbackTextView: UITextView!
 
     @IBAction func sendFeedbackButton(sender: UIButton) {
-        if let text = leaveFeedbackTextView.text {
+        if let text = leaveFeedbackTextView.text, let user = FIRAuth.auth()?.currentUser {
             // send
-            // update table
-            // clear and hide keyboard
+            self.saveFeedback(text, uid: user.uid, facebookFriendsCount: currentUserFacebookFriendsCount!, completion: {() -> Void in
+                // update table
+                // clear and hide keyboard
+                self.leaveFeedbackTextView.text = ""
+                //self.view.endEditing(true)
+                self.leaveFeedbackTextView.resignFirstResponder()
+            })
         }
     }
 
@@ -170,6 +175,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         // [END read_data_once]
     }
+
+
+    // MARK: Write data to Firebase
+    func saveFeedback(message: String, uid: String, facebookFriendsCount: Int, completion: () -> Void) -> Void {
+        // get timestamp as string
+        let currentDate = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        let timestamp = dateFormatter.stringFromDate(currentDate)
+
+        ref.child("person_feedbacks").child(personUID).childByAutoId().setValue([
+            "timestamp": timestamp,
+            "message": message,
+            "uid": uid,
+            "friends_count": facebookFriendsCount
+            ], withCompletionBlock: {(error, ref) -> Void in
+                // call callback
+                completion()
+        })
+    }
+
 
     // MARK: Collection View of Books
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

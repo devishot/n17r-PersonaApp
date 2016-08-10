@@ -25,12 +25,12 @@ class loginViewController: UIViewController {
 
         facebookLogin.logInWithReadPermissions(["email", "user_friends"], fromViewController: self) { (result, error) in
             if FBSDKAccessToken.currentAccessToken() != nil {
+                self.updateUserProfileWithFacebook()
                 self.completeSignIn()
             }
         }
     }
 
-    var leaderBoard: UIViewController? = nil
 
     // [START define_database_reference]
     var ref: FIRDatabaseReference!
@@ -47,9 +47,6 @@ class loginViewController: UIViewController {
         // [START create_database_reference]
         ref = FIRDatabase.database().reference()
         // [END create_database_reference]
-        
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        self.leaderBoard = mainStoryboard.instantiateViewControllerWithIdentifier("leaderBoard") as UIViewController
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -58,10 +55,12 @@ class loginViewController: UIViewController {
         // redirect if already logged in
         if FBSDKAccessToken.currentAccessToken() != nil {
 
+            self.updateUserProfileWithFacebook()
+
             if let user = FIRAuth.auth()?.currentUser {
                 print("Already logged in, user: \(user.displayName)");
                 // redirect to LeaderBoard
-                self.presentViewController(self.leaderBoard!, animated: true, completion: nil)
+                self.performSegueWithIdentifier("signedInSegue", sender: self)
 
             } else {
                 print("Warning: not logged in Firebase")
@@ -70,13 +69,6 @@ class loginViewController: UIViewController {
             }
         }
 
-        // update facebook data in user profile on database
-        self.fetchFacebookProfileData({(data: [String: AnyObject]) -> Void in
-
-            if let user = FIRAuth.auth()?.currentUser {
-                self.ref.child("users").child(user.uid).setValue(data)
-            }
-        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +76,16 @@ class loginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    func updateUserProfileWithFacebook() -> Void {
+        // update facebook data in user profile on database
+        self.fetchFacebookProfileData({(data: [String: AnyObject]) -> Void in
+            
+            if let user = FIRAuth.auth()?.currentUser {
+                self.ref.child("users").child(user.uid).setValue(data)
+            }
+        })
+    }
 
     func fetchFacebookProfileData(completion: ([String: AnyObject]) -> Void) {
         var completionResult: [String: AnyObject] = [:]
@@ -136,9 +138,9 @@ class loginViewController: UIViewController {
                 print("Firebase login: \(user?.displayName)");
                 // callback
                 completion()
-                
+
             } else {
-                print(error.debugDescription);
+                print("Error at signIntoFirebase:", error.debugDescription);
             }
         })
     }
@@ -148,7 +150,8 @@ class loginViewController: UIViewController {
     func completeSignIn() {
         signIntoFirebase({() -> Void in
             // redirect to LeaderBoard
-            self.presentViewController(self.leaderBoard!, animated: true, completion: nil)
+            self.performSegueWithIdentifier("signedInSegue", sender: self)
         })
     }
+
 }

@@ -52,7 +52,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    @IBOutlet weak var followersIcon: UIImageView!
 
     // [START define_database_reference]
     var ref: FIRDatabaseReference!
@@ -76,11 +75,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         //add icon inline with label followers
         personFollowers.addImage("followers", afterLabel: true)
-    
-        self.followersIcon.image = UIImage(named: "followers")
+
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
-       
-        
+
         // changes for button border
         feedbackButton.layer.borderColor = UIColor.blackColor().CGColor
         feedbackButton.layer.cornerRadius = 5

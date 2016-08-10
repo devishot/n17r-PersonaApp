@@ -10,14 +10,20 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+    
     @IBOutlet weak var infoBackgroundImageView: UIImageView!
-    @IBOutlet weak var infoLogoImageVeiw: UIImageView!
-    @IBOutlet weak var infoDescriptionTextView: UITextView!
+    
+    @IBOutlet weak var logoInfoImageView: UIImageView!
+    
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.infoBackgroundImageView.image = UIImage(named: "infobackground_n17r")
-        self.infoLogoImageVeiw.image = UIImage(named: "Logo-Light")
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
+        self.logoInfoImageView.image = UIImage(named: "Logo-Light")
 
 
         // Do any additional setup after loading the view.

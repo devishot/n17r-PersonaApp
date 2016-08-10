@@ -14,18 +14,23 @@ class LeaderboardTableViewCell: UITableViewCell {
     @IBOutlet weak var leaderboardPersonNameLabel: UILabel!
     @IBOutlet weak var leaderboardPersonsRoleLabel: UILabel!
     @IBOutlet weak var orderInLeaderboardLabel: UILabel!
-    @IBOutlet weak var numberOfFollowersLabel: UILabel!
+
     @IBOutlet weak var personsRoundImageView: UIImageView!
 
+    @IBOutlet weak var numberOfFollowersLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        numberOfFollowersLabel.addImage("followers", afterLabel: false)
         // Initialization code
         
         // Creating round image for person
-        self.personsRoundImageView.layer.cornerRadius = self.personsRoundImageView.frame.size.width/2
-        self.personsRoundImageView.clipsToBounds = true
+        personsRoundImageView.layer.borderWidth = 1
+        personsRoundImageView.layer.masksToBounds = false
+        personsRoundImageView.layer.borderColor = UIColor.clearColor().CGColor
+       // personsRoundImageView.layer.cornerRadius = personsRoundImageView.frame.height/2
+        personsRoundImageView.layer.cornerRadius = 70
+        personsRoundImageView.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

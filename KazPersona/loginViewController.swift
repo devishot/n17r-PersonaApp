@@ -30,6 +30,8 @@ class loginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+         self.loginBackgroundImage.image = UIImage(named: "1")
+        
         // Do any additional setup after loading the view.
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         self.leaderBoard = mainStoryboard.instantiateViewControllerWithIdentifier("leaderBoard") as UIViewController

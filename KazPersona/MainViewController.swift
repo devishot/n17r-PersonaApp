@@ -14,6 +14,11 @@ import Kingfisher
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var leaderboardTableView: UITableView!
+    @IBOutlet weak var madeWithLoveLabel: UILabel!
+    @IBOutlet weak var inNfactorialIncubatorLabel: UILabel!
+    
+ 
+ 
     
     // [START define_database_reference]
     var ref: FIRDatabaseReference!
@@ -25,13 +30,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // embed image with UILabel
+        madeWithLoveLabel.addImage("heart", afterLabel: true)
+        inNfactorialIncubatorLabel.addImage("n_logo", afterLabel: true)
+      
         
+      // navigationbar item color
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: UIFont(name: "Helvetica", size: 18)!
+            
         ]
-
- UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
+ 
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         // Do any additional setup after loading the view.
         
@@ -131,5 +143,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             detailViewController.personWithRate = personWithRate
         }
     }
+    
+    
 
 }
+
+
+

@@ -62,10 +62,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //add icon inline with label followers
+        personFollowers.addImage("followers", afterLabel: true)
     
         self.followersIcon.image = UIImage(named: "followers")
-        
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
        
         
         // changes for button border

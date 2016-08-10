@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O7t-oa-87H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O7t-oa-87H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1059,7 +1059,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="400" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygz-cJ-vb5">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygz-cJ-vb5" customClass="TPKeyboardAvoidingScrollView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pS-RK-AFt">
@@ -2044,6 +2044,7 @@
                     <size key="freeformSize" width="400" height="1200"/>
                     <connections>
                         <outlet property="booksCollectionView" destination="qFF-99-tVU" id="laq-DF-Vyw"/>
+                        <outlet property="feedbackButton" destination="8WW-f0-juZ" id="2g1-4h-Ls9"/>
                         <outlet property="feedbackTableView" destination="SK3-7B-0rs" id="5Oy-9p-SsQ"/>
                         <outlet property="leaveFeedbackTextView" destination="awF-Me-YE1" id="8K3-Go-kMY"/>
                         <outlet property="linksTableView" destination="xEs-if-Ut2" id="79o-Pt-nsk"/>
@@ -2054,7 +2055,6 @@
                         <outlet property="personFollowers" destination="iEq-Ks-FKq" id="lOf-LP-tzv"/>
                         <outlet property="personName" destination="trb-D1-f2U" id="H8B-U1-xCo"/>
                         <outlet property="profileImageCollectionView" destination="0pS-RK-AFt" id="LGL-Qz-0JA"/>
-                        <outlet property="sendFeedbackButton" destination="8WW-f0-juZ" id="2vM-Pb-ULQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPX-8t-ir2" userLabel="First Responder" sceneMemberID="firstResponder"/>

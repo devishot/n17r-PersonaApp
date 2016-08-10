@@ -10,6 +10,8 @@
 		523F99691D5070D900483A70 /* linksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F99671D5070D900483A70 /* linksTableViewCell.swift */; };
 		523F996A1D5070D900483A70 /* linksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F99681D5070D900483A70 /* linksTableViewController.swift */; };
 		526D2A231D506BFB00BCFE6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 526D2A221D506BFB00BCFE6C /* GoogleService-Info.plist */; };
+		529F11851D59F31E00E1B0B8 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529F11841D59F31E00E1B0B8 /* TPKeyboardAvoidingScrollView.m */; };
+		529F11881D59F44F00E1B0B8 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 529F11871D59F44F00E1B0B8 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		7628AABA177FB3590622BD0C /* Pods_KazPersonaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC580FF095E25A065857EBAD /* Pods_KazPersonaUITests.framework */; };
 		7EFC388275D5247B2C5E3C40 /* Pods_KazPersona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC4FD87C675B4CDD624BF09 /* Pods_KazPersona.framework */; };
 		B4932AC81D52451F002A8098 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4932AC71D52451F002A8098 /* loginViewController.swift */; };
@@ -47,6 +49,11 @@
 		523F99671D5070D900483A70 /* linksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linksTableViewCell.swift; sourceTree = "<group>"; };
 		523F99681D5070D900483A70 /* linksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linksTableViewController.swift; sourceTree = "<group>"; };
 		526D2A221D506BFB00BCFE6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		529F11821D59F31D00E1B0B8 /* KazPersona-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KazPersona-Bridging-Header.h"; sourceTree = "<group>"; };
+		529F11831D59F31E00E1B0B8 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		529F11841D59F31E00E1B0B8 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		529F11861D59F44F00E1B0B8 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		529F11871D59F44F00E1B0B8 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		5AC4FD87C675B4CDD624BF09 /* Pods_KazPersona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KazPersona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4932AC71D52451F002A8098 /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		B4932AC91D525595002A8098 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +150,11 @@
 				B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */,
 				B4AD0AB61D4B310B00E4E97F /* Info.plist */,
 				5201AD421D53151B00564859 /* Bridging-Header.h */,
+				529F11831D59F31E00E1B0B8 /* TPKeyboardAvoidingScrollView.h */,
+				529F11841D59F31E00E1B0B8 /* TPKeyboardAvoidingScrollView.m */,
+				529F11861D59F44F00E1B0B8 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				529F11871D59F44F00E1B0B8 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				529F11821D59F31D00E1B0B8 /* KazPersona-Bridging-Header.h */,
 			);
 			path = KazPersona;
 			sourceTree = "<group>";
@@ -355,9 +367,11 @@
 				B4932AD01D5313DB002A8098 /* LeaderboardTableViewCell.swift in Sources */,
 				B4C0A4E21D58C22F0085FF48 /* FeedbackTableViewCell.swift in Sources */,
 				B4C0A4E01D5879590085FF48 /* SpeakerProfileImageCollectionViewCell.swift in Sources */,
+				529F11881D59F44F00E1B0B8 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				523F996A1D5070D900483A70 /* linksTableViewController.swift in Sources */,
 				523F99691D5070D900483A70 /* linksTableViewCell.swift in Sources */,
 				B4D13EBE1D4E4635003E1526 /* booksCollectionViewCell.swift in Sources */,
+				529F11851D59F31E00E1B0B8 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				B4932AC81D52451F002A8098 /* loginViewController.swift in Sources */,
 				B4AD0AAB1D4B310B00E4E97F /* AppDelegate.swift in Sources */,
 				B4C0A4E41D59CCDD0085FF48 /* InfoViewController.swift in Sources */,
@@ -494,6 +508,7 @@
 			baseConfigurationReference = 29CC530AE8BDC4B8F0798BB1 /* Pods-KazPersona.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KazPersona/Info.plist;
@@ -502,6 +517,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = the.team.NALA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KazPersona/KazPersona-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -510,6 +527,7 @@
 			baseConfigurationReference = BD26D13D16640BFB4961D0F2 /* Pods-KazPersona.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KazPersona/Info.plist;
@@ -518,6 +536,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = the.team.NALA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KazPersona/KazPersona-Bridging-Header.h";
 			};
 			name = Release;
 		};

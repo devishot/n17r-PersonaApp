@@ -8,10 +8,16 @@
 
 import UIKit
 import Firebase
+import DateTools
 
 
 // MARK: global variables and functions
-// here
+let dateFormatter: NSDateFormatter = {
+    let formatter = NSDateFormatter()
+    formatter.locale = NSLocale.currentLocale()
+    formatter.dateFormat = "dd-MM-yyyy HH:mm"
+    return formatter
+}()
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -200,9 +206,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func saveFeedback(message: String, uid: String, facebookFriendsCount: Int, completion: () -> Void) -> Void {
         // get timestamp as string
         let currentDate = NSDate()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         let timestamp = dateFormatter.stringFromDate(currentDate)
 
         ref.child("person_feedbacks").child(personUID).childByAutoId().setValue([
@@ -228,7 +231,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             cell.imageView.image = self.booksImageArray[indexPath.row]
             return cell
-            
     }
 
 
@@ -268,9 +270,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let message = feedback["message"] as! String
             let followersNumber = feedback["friends_count"] as! Int
+            let timestamp = feedback["timestamp"] as! String
+            let date = dateFormatter.dateFromString(timestamp)
+            let dateAgo = date!.timeAgoSinceNow() as String
 
             cell.feedbackTextView.text = message
             cell.userFollowersNumberLabel.text = String(followersNumber)
+            cell.dateLabel.text = dateAgo
         }
         return UITableViewCell()
     }

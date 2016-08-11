@@ -83,8 +83,9 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //add background to table view
+        
        
+        
         
         //add icon inline with label followers
         personFollowers.addImage("followers", afterLabel: true)
@@ -337,6 +338,7 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
         if tableView == self.linksTableView {
             // redirec to to WebViewController
             performSegueWithIdentifier(self.webviewSegueID, sender: self)
+            
         }
     }
 

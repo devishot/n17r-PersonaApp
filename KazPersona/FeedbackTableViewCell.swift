@@ -15,11 +15,14 @@ class FeedbackTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var feedbackTextView: UITextView!
     
-
+    @IBAction func offensiveContentButton(sender: UIButton) {
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        userFollowersNumberLabel.addImage("followers", afterLabel: false)
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

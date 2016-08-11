@@ -26,6 +26,8 @@ let sourceIconUrlFormat = "https://dl.dropboxusercontent.com/u/33464043/n17r_pub
 
 class ViewController: UIViewController, UITextViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var addBackgroundImageView: UIView!
+    
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var personFollowers: UILabel!
     @IBOutlet weak var personName: UILabel!
@@ -84,10 +86,13 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //add background to table view
+       
+        
         //add icon inline with label followers
         personFollowers.addImage("followers", afterLabel: true)
 
-        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
 
         // changes for button border
         feedbackButton.layer.borderColor = UIColor.blackColor().CGColor
@@ -115,10 +120,13 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
     }
 
     override func viewWillAppear(animated: Bool) {
+        
         fetchAndDisplayPersonDescription()
         fetchAndDisplayPersonPhotos()
         fetchAndDisplayPersonArticles()
         fetchAndListenPersonFeedbacks()
+        
+        
     }
 
     // MARK: Fetch data from firebase
@@ -222,24 +230,11 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
 
     // MARK: Collection View Data Source Methods
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.booksCollectionView {
-            return 7
-        }
-        if collectionView == self.profileImageCollectionView {
+        
             return self.photos.count
-        }
-        return 0
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if collectionView == self.booksCollectionView {
-
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! booksCollectionViewCell
-            
-            cell.imageView.image = self.booksImageArray[indexPath.row]
-            return cell
-        }
-        if collectionView == self.profileImageCollectionView {
 
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(profilePhotoCellID, forIndexPath: indexPath) as! SpeakerProfileImageCollectionViewCell
 
@@ -250,8 +245,6 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
             }
             return cell
         }
-        return UICollectionViewCell()
-    }
 
 
     // MARK: Table View Data Source Methods
@@ -325,6 +318,13 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
             cell.feedbackTextView.text = message
             cell.userFollowersNumberLabel.text = String(followersNumber)
             cell.dateLabel.text = dateAgo
+            // customization of label look
+            cell.userFollowersNumberLabel.addImage("followers", afterLabel: false)
+            cell.userFollowersNumberLabel.layer.borderColor = UIColor.clearColor().CGColor
+            cell.userFollowersNumberLabel.layer.borderWidth = 1
+            cell.userFollowersNumberLabel.layer.masksToBounds = true
+            cell.userFollowersNumberLabel.layer.cornerRadius = 10
+            
         }
         return UITableViewCell()
     }

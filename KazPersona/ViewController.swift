@@ -24,6 +24,7 @@ let dateFormatter: NSDateFormatter = {
 class ViewController: UIViewController, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var addBackgroundImageView: UIView!
+    @IBOutlet weak var mainRoleLabel: UILabel!
     
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var personFollowers: UILabel!
@@ -79,13 +80,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        //add borders to labels
+        mainRoleLabel.layer.cornerRadius = 10
         
         //add icon inline with label followers
         personFollowers.addImage("followers", afterLabel: true)
 
-        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
 
         // changes for button border
         feedbackButton.layer.borderColor = UIColor.blackColor().CGColor

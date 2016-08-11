@@ -201,13 +201,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="в   " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-DA-OYT">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cделано с   " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMr-CS-pv8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="сделано с  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMr-CS-pv8">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aMr-CS-pv8" secondAttribute="height" multiplier="400:21" id="aM4-zV-ldJ">
@@ -463,6 +457,12 @@
                                     </mask>
                                 </variation>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="в   " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-DA-OYT">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -470,7 +470,7 @@
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="0uV-DA-OYT" firstAttribute="leading" secondItem="aMr-CS-pv8" secondAttribute="trailing" constant="8" symbolic="YES" id="Dyh-x9-umP">
-                                <variation key="widthClass=compact" constant="23"/>
+                                <variation key="widthClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="8AF-fk-8NM" secondAttribute="trailing" id="FmF-fw-zfu"/>
                             <constraint firstItem="0uV-DA-OYT" firstAttribute="top" secondItem="8AF-fk-8NM" secondAttribute="bottom" constant="16" id="MKY-RO-74H">
@@ -480,23 +480,23 @@
                                 <variation key="widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="aMr-CS-pv8" firstAttribute="trailing" secondItem="8AF-fk-8NM" secondAttribute="trailing" id="Ubf-LZ-Nny">
-                                <variation key="widthClass=compact" constant="-141"/>
+                                <variation key="widthClass=compact" constant="-146"/>
                             </constraint>
                             <constraint firstItem="0uV-DA-OYT" firstAttribute="trailing" secondItem="bVb-sF-YyH" secondAttribute="trailingMargin" id="Wei-Hr-t73">
-                                <variation key="widthClass=compact" constant="-29"/>
+                                <variation key="widthClass=compact" constant="-49"/>
                             </constraint>
                             <constraint firstItem="aMr-CS-pv8" firstAttribute="top" secondItem="8AF-fk-8NM" secondAttribute="bottom" constant="14" id="dDc-BZ-dFA"/>
                             <constraint firstItem="8AF-fk-8NM" firstAttribute="leading" secondItem="bVb-sF-YyH" secondAttribute="leading" id="lQg-bm-cfl"/>
                             <constraint firstItem="aMr-CS-pv8" firstAttribute="leading" secondItem="8AF-fk-8NM" secondAttribute="leading" id="sY2-Vq-31V">
-                                <variation key="widthClass=compact" constant="67"/>
+                                <variation key="widthClass=compact" constant="62"/>
                             </constraint>
                             <constraint firstAttribute="bottom" secondItem="aMr-CS-pv8" secondAttribute="bottom" constant="20" symbolic="YES" id="tij-Zb-3us"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="0uV-DA-OYT"/>
                                 <exclude reference="aMr-CS-pv8"/>
                                 <exclude reference="8AF-fk-8NM"/>
+                                <exclude reference="0uV-DA-OYT"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="RQC-Oa-5r8"/>
@@ -514,9 +514,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="0uV-DA-OYT"/>
                                 <include reference="aMr-CS-pv8"/>
                                 <include reference="8AF-fk-8NM"/>
+                                <include reference="0uV-DA-OYT"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="RQC-Oa-5r8"/>
@@ -952,7 +952,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pS-RK-AFt">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0B9-ba-wZt">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0B9-ba-wZt">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="XIM-6T-SQd">
@@ -1429,6 +1429,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Основная деятельность" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHB-os-uaX">
                                                 <rect key="frame" x="40" y="159" width="360" height="21"/>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.92941176469999998" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="P8e-h2-LD3"/>
                                                 </constraints>
@@ -1942,6 +1943,7 @@
                         <outlet property="leaveFeedbackTextView" destination="awF-Me-YE1" id="8K3-Go-kMY"/>
                         <outlet property="linksTableView" destination="xEs-if-Ut2" id="79o-Pt-nsk"/>
                         <outlet property="listOfBooksLabel" destination="pgn-B3-fZQ" id="kkz-tM-OW0"/>
+                        <outlet property="mainRoleLabel" destination="yHB-os-uaX" id="nnV-hG-EvL"/>
                         <outlet property="mainScrollView" destination="Ygz-cJ-vb5" id="OTn-ZJ-c95"/>
                         <outlet property="personDescriptionLabel" destination="yHB-os-uaX" id="ZRf-hY-l2Z"/>
                         <outlet property="personDescriptionTextView" destination="5be-Sn-OIT" id="R1O-G8-wZE"/>

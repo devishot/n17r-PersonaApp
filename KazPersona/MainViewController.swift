@@ -104,6 +104,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.leaderboardPersonsRoleLabel.text = biz
         cell.orderInLeaderboardLabel.text = String(indexPath.row + 1)
         cell.numberOfFollowersLabel.text = String(followers)
+        
+        //cell add icon
+        cell.numberOfFollowersLabel.addImage("foll_icon", afterLabel: false)
 
         if let picture = personWithRate["pic"], let picture_url = NSURL(string: picture as! String)
         {

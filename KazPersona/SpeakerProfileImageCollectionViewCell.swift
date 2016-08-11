@@ -11,7 +11,5 @@ import UIKit
 class SpeakerProfileImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var speakerImageView: UIImageView!
-    @IBOutlet weak var speakerNameLabel: UILabel!
-    @IBOutlet weak var speakerFollowersNumber: UILabel!
     
 }

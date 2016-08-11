@@ -28,15 +28,20 @@ class LeaderboardTableViewCell: UITableViewCell {
         personsRoundImageView.layer.borderWidth = 1
         personsRoundImageView.layer.masksToBounds = false
         personsRoundImageView.layer.borderColor = UIColor.clearColor().CGColor
-       // personsRoundImageView.layer.cornerRadius = personsRoundImageView.frame.height/2
-        personsRoundImageView.layer.cornerRadius = 70
+        personsRoundImageView.layer.cornerRadius = personsRoundImageView.frame.height/2
+        personsRoundImageView.layer.cornerRadius = 15
         personsRoundImageView.clipsToBounds = true
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        personsRoundImageView.layer.cornerRadius = personsRoundImageView.frame.width / 2
     }
 
 }

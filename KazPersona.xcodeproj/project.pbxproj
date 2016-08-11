@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52017DEF1D5C6F6E009EB9D4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52017DEE1D5C6F6E009EB9D4 /* WebViewController.swift */; };
 		523F99691D5070D900483A70 /* linksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F99671D5070D900483A70 /* linksTableViewCell.swift */; };
 		523F996A1D5070D900483A70 /* linksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F99681D5070D900483A70 /* linksTableViewController.swift */; };
 		526D2A231D506BFB00BCFE6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 526D2A221D506BFB00BCFE6C /* GoogleService-Info.plist */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		29CC530AE8BDC4B8F0798BB1 /* Pods-KazPersona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazPersona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KazPersona/Pods-KazPersona.debug.xcconfig"; sourceTree = "<group>"; };
 		45F31D79CBEE9D77C688A2B0 /* Pods-KazPersonaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazPersonaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KazPersonaUITests/Pods-KazPersonaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		52017DEE1D5C6F6E009EB9D4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		5201AD421D53151B00564859 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		523F99671D5070D900483A70 /* linksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linksTableViewCell.swift; sourceTree = "<group>"; };
 		523F99681D5070D900483A70 /* linksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linksTableViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				B4932ACF1D5313DB002A8098 /* LeaderboardTableViewCell.swift */,
 				B4932AC91D525595002A8098 /* MainViewController.swift */,
 				B4932AC71D52451F002A8098 /* loginViewController.swift */,
+				52017DEE1D5C6F6E009EB9D4 /* WebViewController.swift */,
 				B4AD0AB11D4B310B00E4E97F /* Assets.xcassets */,
 				B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */,
 				B4AD0AB61D4B310B00E4E97F /* Info.plist */,
@@ -375,6 +378,7 @@
 				B4932AC81D52451F002A8098 /* loginViewController.swift in Sources */,
 				B4AD0AAB1D4B310B00E4E97F /* AppDelegate.swift in Sources */,
 				B4C0A4E41D59CCDD0085FF48 /* InfoViewController.swift in Sources */,
+				52017DEF1D5C6F6E009EB9D4 /* WebViewController.swift in Sources */,
 				B4932ACA1D525595002A8098 /* MainViewController.swift in Sources */,
 				B4D13EC21D4F4B4B003E1526 /* (null) in Sources */,
 				B4D13EC01D4F485B003E1526 /* (null) in Sources */,

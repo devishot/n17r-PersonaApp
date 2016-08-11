@@ -23,6 +23,8 @@ let dateFormatter: NSDateFormatter = {
 
 class ViewController: UIViewController, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var addBackgroundImageView: UIView!
+    
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var personFollowers: UILabel!
     @IBOutlet weak var personName: UILabel!
@@ -77,6 +79,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         //add icon inline with label followers
         personFollowers.addImage("followers", afterLabel: true)
 
@@ -113,10 +118,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
     }
 
     override func viewWillAppear(animated: Bool) {
+        
         fetchAndDisplayPersonDescription()
         // fetchAndDisplayPersonArticles()
         fetchAndDisplayPersonPhotos()
         fetchAndListenPersonFeedbacks()
+        
+        
     }
 
     // MARK: Fetch data from firebase

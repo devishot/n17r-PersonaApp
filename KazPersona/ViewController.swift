@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import DateTools
+import Kingfisher
 
 
 // MARK: global variables and functions
@@ -20,13 +21,14 @@ let dateFormatter: NSDateFormatter = {
 }()
 
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var personFollowers: UILabel!
     @IBOutlet weak var personName: UILabel!
 
-    @IBOutlet weak var profileImageCollectionView: UIView!
+
+    @IBOutlet weak var profileImageCollectionView: UICollectionView!
 
 
     @IBOutlet weak var personDescriptionLabel: UILabel!
@@ -59,6 +61,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     let articleLinkCellID = "CellIdentifier"
     let feedbackCellID = "feedbackCell"
+    let profilePhotoCellID = "speakerProfileImageCell"
 
     var personUID: String = "abaitasov"
     var personWithRate: [String: AnyObject] = [:]
@@ -66,6 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var booksImageArray = [UIImage(named: "book1"), UIImage(named: "book2"), UIImage(named: "book3"),  UIImage(named: "book4"), UIImage(named: "book5"),  UIImage(named: "book6"), UIImage(named: "book7")]
     var articles: [[String: String]] = []
     var feedbacks: [[String: AnyObject]] = []
+    var photos: [String] = []
 
     let logoIconsImageArray = [UIImage(named: "esquire_logo"), UIImage(named: "buro_logo"), UIImage(named: "chronicle_logo"), UIImage(named: "kursiv_logo")]
     let backgroundImagesArray = [UIImage(named:"bacground_link"), UIImage(named:"background_buro"), UIImage(named:"background_chronicle"), UIImage(named:"background_kursiv")]
@@ -101,7 +105,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         self.feedbackTableView.dataSource = self;
 
-        
+        self.profileImageCollectionView.dataSource = self;
+
         // [START create_database_reference]
         ref = FIRDatabase.database().reference()
         // [END create_database_reference]
@@ -110,10 +115,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewWillAppear(animated: Bool) {
         fetchAndDisplayPersonDescription()
         // fetchAndDisplayPersonArticles()
-        // fetchAndDisplayPersonPhotos()
+        fetchAndDisplayPersonPhotos()
         fetchAndListenPersonFeedbacks()
     }
-
 
     // MARK: Fetch data from firebase
     func fetchAndDisplayPersonDescription() -> Void {
@@ -171,15 +175,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.handleFirebaseEmptyDataError()
                 return
             }
-            
-            let photos = snapshot.value as! [String]
 
-            /*
-            if let url = NSURL(string: cover_url!), data = NSData(contentsOfURL: url)
-            {
-                self.speakerProfileImageView.image = UIImage(data: data)
-            }
-             */
+            self.photos = snapshot.value as! [String]
+            self.profileImageCollectionView.reloadData()
+
         }) { (error) in
             self.handleFirebaseConnectionError(error)
         }
@@ -190,10 +189,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func fetchAndListenPersonFeedbacks() -> Void {
         self.ref.child("person_feedbacks").child(personUID).observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
 
-            if let value = snapshot.value {
-                let dict = value as! NSDictionary
-
-                self.feedbacks = dict.allValues as! [[String: AnyObject]]
+            if let value = snapshot.value as? NSDictionary {
+                self.feedbacks = value.allValues as! [[String: AnyObject]]
                 self.feedbackTableView.reloadData()
             }
             else {
@@ -220,17 +217,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
 
-    // MARK: Collection View of Books
+    // MARK: Collection View Data Source Methods
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        if collectionView == self.booksCollectionView {
+            return 7
+        }
+        if collectionView == self.profileImageCollectionView {
+            return self.photos.count
+        }
+        return 0
     }
-   
+
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-            
+        if collectionView == self.booksCollectionView {
+
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! booksCollectionViewCell
             
             cell.imageView.image = self.booksImageArray[indexPath.row]
             return cell
+        }
+        if collectionView == self.profileImageCollectionView {
+
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(profilePhotoCellID, forIndexPath: indexPath) as! SpeakerProfileImageCollectionViewCell
+
+            let url = self.photos[indexPath.row]
+            if let photo_url = NSURL(string: url) {
+                cell.speakerImageView.kf_setImageWithURL(photo_url)
+            }
+            return cell
+        }
+        return UICollectionViewCell()
     }
 
 
@@ -244,6 +260,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return articles.count
         }
         if tableView == self.feedbackTableView {
+            if self.feedbacks.count == 0 {
+                // init NoDataLabel
+                let emptyLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
+                emptyLabel.text = "Будьте первым! Поделитесь своим мнением"
+                emptyLabel.font = UIFont.systemFontOfSize(12)
+                emptyLabel.textAlignment = NSTextAlignment.Center
+
+                let frame = CGRectMake(tableView.frame.origin.x, 90, tableView.frame.size.width, 90);
+                print(frame)
+
+                tableView.backgroundView = emptyLabel
+                tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+                tableView.frame = frame
+                return 0
+            }
             return feedbacks.count
         }
         return 0

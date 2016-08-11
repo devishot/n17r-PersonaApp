@@ -72,7 +72,6 @@
 		B4C0A4E11D58C22F0085FF48 /* FeedbackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewCell.swift; sourceTree = "<group>"; };
 		B4C0A4E31D59CCDD0085FF48 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		B4C0A4E71D5A08580085FF48 /* UILabel+ImageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+ImageAttachment.swift"; sourceTree = "<group>"; };
-		B4C0A4E91D5B6C150085FF48 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Kingfisher.framework; path = "/Users/useHomer/Library/Developer/Xcode/DerivedData/KazPersona-bcjwcqdlqqlkqbbmwarpgotfmomp/Build/Products/Debug-iphoneos/Kingfisher/Kingfisher.framework"; sourceTree = "<absolute>"; };
 		B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = booksCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD26D13D16640BFB4961D0F2 /* Pods-KazPersona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazPersona.release.xcconfig"; path = "Pods/Target Support Files/Pods-KazPersona/Pods-KazPersona.release.xcconfig"; sourceTree = "<group>"; };
 		CC580FF095E25A065857EBAD /* Pods_KazPersonaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KazPersonaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +112,6 @@
 		B4AD0A9E1D4B310B00E4E97F = {
 			isa = PBXGroup;
 			children = (
-				B4C0A4E91D5B6C150085FF48 /* Kingfisher.framework */,
 				B4AD0AA91D4B310B00E4E97F /* KazPersona */,
 				B4AD0ABE1D4B310C00E4E97F /* KazPersonaUITests */,
 				B4AD0AA81D4B310B00E4E97F /* Products */,

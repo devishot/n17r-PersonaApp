@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O7t-oa-87H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O7t-oa-87H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1533,20 +1533,11 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="89"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" editable="NO" text="this person is so incredible im simply keen on his charizmatic attitude. this is so marvelous " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR4-NC-1ww">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                </textView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дата" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pI5-xs-BlF">
                                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
-                                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="241" y="0.0" width="130" height="21"/>
-                                                                    </variation>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers num" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDr-5G-ima">
                                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1561,13 +1552,18 @@
                                                                             <exclude reference="4eX-UF-wd9"/>
                                                                         </mask>
                                                                     </variation>
-                                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                                        <rect key="frame" x="19" y="0.0" width="209" height="21"/>
+                                                                    <variation key="widthClass=compact">
                                                                         <mask key="constraints">
                                                                             <include reference="4eX-UF-wd9"/>
                                                                         </mask>
                                                                     </variation>
                                                                 </label>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" editable="NO" text="this person is so incredible im simply keen on his charizmatic attitude. this is so marvelous " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR4-NC-1ww">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                </textView>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="eDr-5G-ima" firstAttribute="leading" secondItem="Lzp-5P-YhP" secondAttribute="leadingMargin" constant="11" id="CDA-FU-IEY"/>
@@ -1588,9 +1584,9 @@
                                                             </constraints>
                                                             <variation key="default">
                                                                 <mask key="subviews">
-                                                                    <exclude reference="iR4-NC-1ww"/>
                                                                     <exclude reference="pI5-xs-BlF"/>
                                                                     <exclude reference="eDr-5G-ima"/>
+                                                                    <exclude reference="iR4-NC-1ww"/>
                                                                 </mask>
                                                                 <mask key="constraints">
                                                                     <exclude reference="CDA-FU-IEY"/>
@@ -1606,9 +1602,9 @@
                                                             </variation>
                                                             <variation key="widthClass=compact">
                                                                 <mask key="subviews">
-                                                                    <include reference="iR4-NC-1ww"/>
                                                                     <include reference="pI5-xs-BlF"/>
                                                                     <include reference="eDr-5G-ima"/>
+                                                                    <include reference="iR4-NC-1ww"/>
                                                                 </mask>
                                                                 <mask key="constraints">
                                                                     <include reference="CDA-FU-IEY"/>
@@ -1947,7 +1943,7 @@
                         <outlet property="personDescriptionTextView" destination="5be-Sn-OIT" id="R1O-G8-wZE"/>
                         <outlet property="personFollowers" destination="iEq-Ks-FKq" id="lOf-LP-tzv"/>
                         <outlet property="personName" destination="trb-D1-f2U" id="H8B-U1-xCo"/>
-                        <outlet property="profileImageCollectionView" destination="0pS-RK-AFt" id="LGL-Qz-0JA"/>
+                        <outlet property="profileImageCollectionView" destination="0B9-ba-wZt" id="356-p5-DBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPX-8t-ir2" userLabel="First Responder" sceneMemberID="firstResponder"/>

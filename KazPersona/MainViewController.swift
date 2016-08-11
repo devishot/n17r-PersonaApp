@@ -107,7 +107,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         if let picture = personWithRate["pic"], let picture_url = NSURL(string: picture as! String)
         {
-            cell.personsRoundImageView.kf_setImageWithURL(picture_url)
+            let placeholderPhoto = UIImage(named: "placeholder_photo")
+            cell.personsRoundImageView.kf_setImageWithURL(picture_url, placeholderImage: placeholderPhoto)
         }
 
         return cell

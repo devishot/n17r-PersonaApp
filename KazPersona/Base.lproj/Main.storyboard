@@ -1665,9 +1665,6 @@
                                                         <state key="normal" title="Опубликовать анонимно">
                                                             <color key="titleColor" red="0.15013498040000001" green="0.15013498040000001" blue="0.15013498040000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
-                                                        <variation key="widthClass=compact" misplaced="YES">
-                                                            <rect key="frame" x="66" y="105" width="268" height="30"/>
-                                                        </variation>
                                                         <connections>
                                                             <action selector="sendFeedbackButton:" destination="3Ev-Bw-tPo" eventType="touchUpInside" id="nUr-2C-X5O"/>
                                                         </connections>
@@ -1713,29 +1710,28 @@
                                                         <exclude reference="awF-Me-YE1"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="8zt-0i-I8k"/>
-                                                        <exclude reference="Jl8-qr-JPa"/>
-                                                        <exclude reference="VEP-ob-d8W"/>
                                                         <exclude reference="F7V-QZ-cue"/>
                                                         <exclude reference="F7t-ht-1Fb"/>
                                                         <exclude reference="id3-Tl-Qzc"/>
                                                         <exclude reference="kJu-Q8-j6K"/>
+                                                        <exclude reference="8zt-0i-I8k"/>
+                                                        <exclude reference="Jl8-qr-JPa"/>
+                                                        <exclude reference="VEP-ob-d8W"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="286" width="400" height="155"/>
+                                                <variation key="widthClass=compact">
                                                     <mask key="subviews">
                                                         <include reference="8WW-f0-juZ"/>
                                                         <include reference="awF-Me-YE1"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="8zt-0i-I8k"/>
-                                                        <include reference="Jl8-qr-JPa"/>
-                                                        <include reference="VEP-ob-d8W"/>
                                                         <include reference="F7V-QZ-cue"/>
                                                         <include reference="F7t-ht-1Fb"/>
                                                         <include reference="id3-Tl-Qzc"/>
                                                         <include reference="kJu-Q8-j6K"/>
+                                                        <include reference="8zt-0i-I8k"/>
+                                                        <include reference="Jl8-qr-JPa"/>
+                                                        <include reference="VEP-ob-d8W"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -1781,9 +1777,6 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="Fgk-Ws-wbG"/>
-                                                <exclude reference="BIL-YU-2VT"/>
-                                                <exclude reference="neN-4u-jBg"/>
-                                                <exclude reference="ty8-mi-ACi"/>
                                                 <exclude reference="0AF-eU-ybH"/>
                                                 <exclude reference="WMj-Mp-wvf"/>
                                                 <exclude reference="aUt-21-rf1"/>
@@ -1792,6 +1785,9 @@
                                                 <exclude reference="vAk-XD-7mS"/>
                                                 <exclude reference="AVi-u4-OQL"/>
                                                 <exclude reference="ZgQ-z6-kDF"/>
+                                                <exclude reference="BIL-YU-2VT"/>
+                                                <exclude reference="neN-4u-jBg"/>
+                                                <exclude reference="ty8-mi-ACi"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
@@ -1802,9 +1798,6 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="Fgk-Ws-wbG"/>
-                                                <include reference="BIL-YU-2VT"/>
-                                                <include reference="neN-4u-jBg"/>
-                                                <include reference="ty8-mi-ACi"/>
                                                 <include reference="0AF-eU-ybH"/>
                                                 <include reference="WMj-Mp-wvf"/>
                                                 <include reference="aUt-21-rf1"/>
@@ -1813,6 +1806,9 @@
                                                 <include reference="vAk-XD-7mS"/>
                                                 <include reference="AVi-u4-OQL"/>
                                                 <include reference="ZgQ-z6-kDF"/>
+                                                <include reference="BIL-YU-2VT"/>
+                                                <include reference="neN-4u-jBg"/>
+                                                <include reference="ty8-mi-ACi"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -1983,6 +1979,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OQo-3X-Vju"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0au-0Q-4UM">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleAspectFit" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBO-Xm-fx2">

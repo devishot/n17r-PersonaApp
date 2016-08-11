@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import Kingfisher
 
 
 @UIApplicationMain
@@ -26,6 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: [facebook FBSDKCoreKit]
         FBSDKApplicationDelegate.sharedInstance().application(application,
                                                               didFinishLaunchingWithOptions:launchOptions)
+
+        // MARK: set settings for Image caching
+        let cache = KingfisherManager.sharedManager.cache
+        // Set max disk cache to 50 mb. Default is no limit.
+        cache.maxDiskCacheSize = 50 * 1024 * 1024
+        // Set max disk cache to duration to 3 days, Default is 1 week.
+        cache.maxCachePeriodInSecond = 60 * 60 * 24 * 3
 
         return true
     }

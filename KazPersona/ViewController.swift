@@ -119,16 +119,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
 
     override func viewWillAppear(animated: Bool) {
         fetchAndDisplayPersonDescription()
-        fetchAndDisplayPersonPhotos()
-        fetchAndDisplayPersonArticles()
-        fetchAndListenPersonFeedbacks()
+//        fetchAndDisplayPersonPhotos()
+//        fetchAndDisplayPersonArticles()
+//        fetchAndListenPersonFeedbacks()
     }
 
     // MARK: Fetch data from firebase
     func fetchAndDisplayPersonDescription() -> Void {
         // [START read_data_once]
         ref.child("persons").child(personUID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-            
+
             if snapshot.value is NSNull {
                 self.handleFirebaseEmptyDataError()
                 return
@@ -244,7 +244,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
 
             let url = self.photos[indexPath.row]
             if let photo_url = NSURL(string: url) {
-                cell.speakerImageView.kf_setImageWithURL(photo_url)
+                let placeholderPictureImage = UIImage(named: "placeholder")
+                cell.speakerImageView.kf_setImageWithURL(photo_url, placeholderImage: placeholderPictureImage)
             }
             return cell
         }
@@ -295,7 +296,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if tableView == self.linksTableView {
             let cell = tableView.dequeueReusableCellWithIdentifier(articleLinkCellID, forIndexPath: indexPath) as! linksTableViewCell
-            
+
             // Fetch Article
             let article = self.articles[indexPath.row] as [String: String]
             let aTitle = article["title"]
@@ -304,7 +305,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
             cell.linksTitleLabel?.text = aTitle
             if let source = article["source"] {
                 let sourceIconUrl = String(format: sourceIconUrlFormat, source)
-                cell.logoImageView.kf_setImageWithURL(NSURL(string: sourceIconUrl))
+                cell.logoImageView.kf_setImageWithURL(NSURL(string: sourceIconUrl)!, placeholderImage: nil)
             }
             return cell
         }

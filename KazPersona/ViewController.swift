@@ -24,7 +24,7 @@ let sourceIconUrlFormat = "https://dl.dropboxusercontent.com/u/33464043/n17r_pub
 
 
 
-class ViewController: UIViewController, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITextViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var personFollowers: UILabel!
@@ -51,7 +51,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
             // send
             self.saveFeedback(text, uid: user.uid, facebookFriendsCount: currentUserFacebookFriendsCount!, completion: {() -> Void in
                 // clear textarea and hide keyboard
-                self.leaveFeedbackTextView.text = ""
+                self.leaveFeedbackTextView.text = self.leaveFeedbackPlaceholderAlternative
                 self.leaveFeedbackTextView.resignFirstResponder()
             })
         }
@@ -67,6 +67,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
     let profilePhotoCellID = "speakerProfileImageCell"
     let webviewSegueID = "webviewSegue"
 
+    let leaveFeedbackPlaceholder = "Что вы думаете об этой личности?"
+    let leaveFeedbackPlaceholderAlternative = "Может еще что нибудь вспомнили? 🕵"
 
     var personUID: String = "abaitasov"
     var personWithRate: [String: AnyObject] = [:]
@@ -95,13 +97,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
         leaveFeedbackTextView.layer.borderColor = UIColor.grayColor().CGColor
         leaveFeedbackTextView.layer.cornerRadius = 5
         leaveFeedbackTextView.layer.borderWidth = 1
-        
-        // changes to auto layout of TextView
-        let contentSize = personDescriptionTextView.sizeThatFits(personDescriptionTextView.bounds.size)
-        var frame = personDescriptionTextView.frame
-        frame.size.height = contentSize.height
-        personDescriptionTextView.frame = frame
-        
 
         // Do any additional setup after loading the view, typically from a nib.
 
@@ -112,6 +107,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
 
         self.profileImageCollectionView.dataSource = self;
 
+        self.leaveFeedbackTextView.delegate = self;
+        
         // [START create_database_reference]
         ref = FIRDatabase.database().reference()
         // [END create_database_reference]
@@ -119,9 +116,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
 
     override func viewWillAppear(animated: Bool) {
         fetchAndDisplayPersonDescription()
-//        fetchAndDisplayPersonPhotos()
-//        fetchAndDisplayPersonArticles()
-//        fetchAndListenPersonFeedbacks()
+        fetchAndDisplayPersonPhotos()
+        fetchAndDisplayPersonArticles()
+        fetchAndListenPersonFeedbacks()
     }
 
     // MARK: Fetch data from firebase
@@ -353,8 +350,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
         }
     }
 
-
     
+    // MARK: Text View Delegate Methods
+    func textViewDidBeginEditing(textView: UITextView) {
+        self.leaveFeedbackTextView.text = nil
+    }
+
+    func textViewDidEndEditing(textView: UITextView) {
+        self.leaveFeedbackTextView.text = leaveFeedbackPlaceholder
+    }
+
     // MARK: error handlers
     func handleFirebaseEmptyDataError() -> Void {
         // [START display_error_modal]

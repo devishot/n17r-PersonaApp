@@ -1849,11 +1849,51 @@
                         <outlet property="personFollowers" destination="iEq-Ks-FKq" id="lOf-LP-tzv"/>
                         <outlet property="personName" destination="trb-D1-f2U" id="H8B-U1-xCo"/>
                         <outlet property="profileImageCollectionView" destination="0B9-ba-wZt" id="356-p5-DBR"/>
+                        <segue destination="xPw-ry-XEk" kind="show" identifier="webviewSegue" id="MCc-mB-9do"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPX-8t-ir2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2910" y="730"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="o0r-Pv-oj4">
+            <objects>
+                <viewController id="xPw-ry-XEk" customClass="WebViewController" customModule="KazPersona" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iJx-j8-Bev"/>
+                        <viewControllerLayoutGuide type="bottom" id="OQo-3X-Vju"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0au-0Q-4UM">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleAspectFit" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBO-Xm-fx2">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="536"/>
+                                </variation>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fBO-Xm-fx2"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fBO-Xm-fx2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="fBO-Xm-fx2" id="upq-mx-1ke"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="04r-jh-1w7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3756" y="316"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KDY-QE-ZVo">

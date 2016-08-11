@@ -23,6 +23,7 @@ let dateFormatter: NSDateFormatter = {
 let sourceIconUrlFormat = "https://dl.dropboxusercontent.com/u/33464043/n17r_public_content/source_logos/%@.png"
 
 
+
 class ViewController: UIViewController, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
     
 
@@ -67,6 +68,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
     let articleLinkCellID = "CellIdentifier"
     let feedbackCellID = "feedbackCell"
     let profilePhotoCellID = "speakerProfileImageCell"
+    let webviewSegueID = "webviewSegue"
+
 
     var personUID: String = "abaitasov"
     var personWithRate: [String: AnyObject] = [:]
@@ -329,15 +332,29 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
     // MARK: Table View Delegate Methods
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == self.linksTableView {
-            // Fetch Article
-            let article = self.articles[indexPath.row] as [String: String]
-            
-            // LOG
-            print(indexPath.row, article)
+            // redirec to to WebViewController
+            performSegueWithIdentifier(self.webviewSegueID, sender: self)
         }
     }
 
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == self.webviewSegueID {
+            let indexPath = self.linksTableView.indexPathForSelectedRow
+            let webViewController = segue.destinationViewController as! WebViewController
+
+
+            // Fetch Article
+            let article = self.articles[indexPath!.row] as [String: String]
+
+            if let article_url = article["url"], let url = NSURL(string: article_url) {
+                webViewController.url = url
+            }
+        }
+    }
+
+
+    
     // MARK: error handlers
     func handleFirebaseEmptyDataError() -> Void {
         // [START display_error_modal]

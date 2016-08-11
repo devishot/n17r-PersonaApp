@@ -20,6 +20,8 @@ let dateFormatter: NSDateFormatter = {
     return formatter
 }()
 
+let sourceIconUrlFormat = "https://dl.dropboxusercontent.com/u/33464043/n17r_public_content/source_logos/%@.png"
+
 
 class ViewController: UIViewController, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
@@ -114,8 +116,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
 
     override func viewWillAppear(animated: Bool) {
         fetchAndDisplayPersonDescription()
-        // fetchAndDisplayPersonArticles()
         fetchAndDisplayPersonPhotos()
+        fetchAndDisplayPersonArticles()
         fetchAndListenPersonFeedbacks()
     }
 
@@ -193,9 +195,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
                 self.feedbacks = value.allValues as! [[String: AnyObject]]
                 self.feedbackTableView.reloadData()
             }
-            else {
-                // TODO: hide table here
-            }
         })
     }
 
@@ -256,28 +255,38 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var numberOfRows: Int = 0
+        var tBackground: UIView? = nil
+        var tSeparatorStyle = UITableViewCellSeparatorStyle.SingleLine
+
         if tableView == self.linksTableView {
-            return articles.count
-        }
-        if tableView == self.feedbackTableView {
-            if self.feedbacks.count == 0 {
-                // init NoDataLabel
-                let emptyLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
-                emptyLabel.text = "Будьте первым! Поделитесь своим мнением"
+            if self.articles.count == 0 {
+                let emptyLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, 90))
+                emptyLabel.text = "Нет публикаций или мы не нашли 🙈"
                 emptyLabel.font = UIFont.systemFontOfSize(12)
                 emptyLabel.textAlignment = NSTextAlignment.Center
 
-                let frame = CGRectMake(tableView.frame.origin.x, 90, tableView.frame.size.width, 90);
-                print(frame)
-
-                tableView.backgroundView = emptyLabel
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-                tableView.frame = frame
-                return 0
+                tBackground = emptyLabel
+                tSeparatorStyle = UITableViewCellSeparatorStyle.None
             }
-            return feedbacks.count
+            numberOfRows = articles.count
         }
-        return 0
+        if tableView == self.feedbackTableView {
+            if self.feedbacks.count == 0 {
+                let emptyLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, 90))
+                emptyLabel.text = "Будьте первым! Поделитесь своим мнением 🗣"
+                emptyLabel.font = UIFont.systemFontOfSize(12)
+                emptyLabel.textAlignment = NSTextAlignment.Center
+
+                tBackground = emptyLabel
+                tSeparatorStyle = UITableViewCellSeparatorStyle.None
+            }
+            numberOfRows = feedbacks.count
+        }
+
+        tableView.backgroundView = tBackground
+        tableView.separatorStyle = tSeparatorStyle
+        return numberOfRows
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -286,11 +295,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
             
             // Fetch Article
             let article = self.articles[indexPath.row] as [String: String]
-            
+            let aTitle = article["title"]
+
             // Configure Cell
-            cell.linksTitleLabel?.text = article["title"]
-            cell.logoImageView.image = self.logoIconsImageArray[indexPath.row]
-            //  cell.linksBackgroundImageView.image = self.backgroundImagesArray[indexPath.row]
+            cell.linksTitleLabel?.text = aTitle
+            if let source = article["source"] {
+                let sourceIconUrl = String(format: sourceIconUrlFormat, source)
+                cell.logoImageView.kf_setImageWithURL(NSURL(string: sourceIconUrl))
+            }
             return cell
         }
         if tableView == self.feedbackTableView {

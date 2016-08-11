@@ -238,7 +238,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="506" id="Dqb-E0-zXI">
-                                        <variation key="widthClass=compact" constant="545"/>
+                                        <variation key="widthClass=compact" constant="481"/>
                                     </constraint>
                                 </constraints>
                                 <prototypes>
@@ -467,7 +467,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8AF-fk-8NM" firstAttribute="top" secondItem="UZU-Gw-q1y" secondAttribute="bottom" constant="6" id="0aZ-27-qbC">
-                                <variation key="widthClass=compact" constant="-64"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="0uV-DA-OYT" firstAttribute="leading" secondItem="aMr-CS-pv8" secondAttribute="trailing" constant="8" symbolic="YES" id="Dyh-x9-umP">
                                 <variation key="widthClass=compact" constant="23"/>
@@ -550,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnB-Q5-fOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076" y="253"/>
+            <point key="canvasLocation" x="2083.5" y="299"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="r3p-UP-Mm1">
@@ -723,27 +723,6 @@
                                             </mask>
                                         </variation>
                                     </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVD-UD-4fO">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="aVD-UD-4fO" secondAttribute="height" multiplier="180:53" id="K56-ds-20V"/>
-                                        </constraints>
-                                        <string key="text">Рейтинг "Топ самых популярных пользователей Facebook" был составлен 22 июня 2016 года Арманом Ахметовым.  В рейтинг входят общественные деятели, политики, люди с шоу-бизнеса и блогеры. </string>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="K56-ds-20V"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="K56-ds-20V"/>
-                                            </mask>
-                                        </variation>
-                                    </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Автор рейтинга" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpT-II-T8I">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <constraints>
@@ -763,6 +742,29 @@
                                             </mask>
                                         </variation>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aVD-UD-4fO">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aVD-UD-4fO" secondAttribute="height" multiplier="180:53" id="K56-ds-20V">
+                                                <variation key="widthClass=compact" constant="-118.8679245283019"/>
+                                            </constraint>
+                                        </constraints>
+                                        <string key="text">Рейтинг "Топ самых популярных пользователей Facebook" был составлен 22 июня 2016 года Арманом Ахметовым.  В рейтинг входят общественные деятели, политики, люди с шоу-бизнеса и блогеры. </string>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="K56-ds-20V"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="K56-ds-20V"/>
+                                            </mask>
+                                        </variation>
+                                    </textView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="LeA-Nz-glj" secondAttribute="trailing" constant="20" id="07t-aQ-ANF"/>
@@ -771,7 +773,7 @@
                                         <variation key="widthClass=compact" constant="191"/>
                                     </constraint>
                                     <constraint firstItem="aVD-UD-4fO" firstAttribute="top" secondItem="WpT-II-T8I" secondAttribute="bottom" constant="1" id="9ox-fu-kJz">
-                                        <variation key="widthClass=compact" constant="8"/>
+                                        <variation key="widthClass=compact" constant="-2"/>
                                     </constraint>
                                     <constraint firstItem="Q0F-QU-mSS" firstAttribute="leading" secondItem="Cos-Xn-OIN" secondAttribute="leading" constant="20" id="ALd-uN-lWh"/>
                                     <constraint firstItem="LeA-Nz-glj" firstAttribute="top" secondItem="GRe-nT-wyN" secondAttribute="bottom" constant="21" id="F6n-cw-GfL">
@@ -819,8 +821,8 @@
                                         <exclude reference="LeA-Nz-glj"/>
                                         <exclude reference="B9f-w8-Adi"/>
                                         <exclude reference="or1-L3-ro8"/>
-                                        <exclude reference="aVD-UD-4fO"/>
                                         <exclude reference="WpT-II-T8I"/>
+                                        <exclude reference="aVD-UD-4fO"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="Ser-9x-Sik"/>
@@ -858,8 +860,8 @@
                                         <include reference="LeA-Nz-glj"/>
                                         <include reference="B9f-w8-Adi"/>
                                         <include reference="or1-L3-ro8"/>
-                                        <include reference="aVD-UD-4fO"/>
                                         <include reference="WpT-II-T8I"/>
+                                        <include reference="aVD-UD-4fO"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="Ser-9x-Sik"/>

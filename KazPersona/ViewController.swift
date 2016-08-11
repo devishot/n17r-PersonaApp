@@ -85,8 +85,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //add background to table view
+        
        
+        
         
         //add icon inline with label followers
         personFollowers.addImage("followers", afterLabel: true)
@@ -317,12 +318,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
             cell.feedbackTextView.text = message
             cell.userFollowersNumberLabel.text = String(followersNumber)
             cell.dateLabel.text = dateAgo
+            
+            
             // customization of label look
             cell.userFollowersNumberLabel.addImage("followers", afterLabel: false)
             cell.userFollowersNumberLabel.layer.borderColor = UIColor.clearColor().CGColor
             cell.userFollowersNumberLabel.layer.borderWidth = 1
             cell.userFollowersNumberLabel.layer.masksToBounds = true
             cell.userFollowersNumberLabel.layer.cornerRadius = 10
+            
+            cell.feedbackTextView.layer.borderColor = UIColor.blackColor().CGColor
+            cell.feedbackTextView.layer.masksToBounds = true
+            cell.feedbackTextView.layer.borderWidth = 2
+            
             
         }
         return UITableViewCell()
@@ -334,6 +342,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UITableViewD
         if tableView == self.linksTableView {
             // redirec to to WebViewController
             performSegueWithIdentifier(self.webviewSegueID, sender: self)
+            
         }
     }
 

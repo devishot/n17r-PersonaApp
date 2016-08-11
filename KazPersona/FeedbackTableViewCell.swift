@@ -16,8 +16,11 @@ class FeedbackTableViewCell: UITableViewCell {
     @IBOutlet weak var feedbackTextView: UITextView!
     
     @IBAction func offensiveContentButton(sender: UIButton) {
+        offensiveContentButtonAction?(self)
     }
-    
+
+    var offensiveContentButtonAction: ((UITableViewCell) -> Void)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

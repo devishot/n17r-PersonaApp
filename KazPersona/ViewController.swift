@@ -26,8 +26,6 @@ let sourceIconUrlFormat = "https://dl.dropboxusercontent.com/u/33464043/n17r_pub
 
 class ViewController: UIViewController, UITextViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var addBackgroundImageView: UIView!
-    
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var personFollowers: UILabel!
     @IBOutlet weak var personName: UILabel!
@@ -38,9 +36,7 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
 
     @IBOutlet weak var personDescriptionLabel: UILabel!
     @IBOutlet weak var personDescriptionTextView: UITextView!
-    
-    @IBOutlet weak var listOfBooksLabel: UILabel!
-    @IBOutlet weak var booksCollectionView: UICollectionView!
+
 
     @IBOutlet weak var linksTableView: UITableView!
     @IBOutlet weak var feedbackTableView: UITableView!
@@ -69,7 +65,7 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
     let profilePhotoCellID = "speakerProfileImageCell"
     let webviewSegueID = "webviewSegue"
 
-    let leaveFeedbackPlaceholder = "Что вы думаете об этой личности?"
+    let leaveFeedbackPlaceholder = "Что думаете об этой личности?"
     let leaveFeedbackPlaceholderAlternative = "Может еще что нибудь вспомнили? 🕵"
 
     var personUID: String = "abaitasov"
@@ -78,6 +74,7 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
     var booksImageArray = [UIImage(named: "book1"), UIImage(named: "book2"), UIImage(named: "book3"),  UIImage(named: "book4"), UIImage(named: "book5"),  UIImage(named: "book6"), UIImage(named: "book7")]
     var articles: [[String: String]] = []
     var feedbacks: [[String: AnyObject]] = []
+    var feedbackIds: [String] = []
     var photos: [String] = []
 
     let logoIconsImageArray = [UIImage(named: "esquire_logo"), UIImage(named: "buro_logo"), UIImage(named: "chronicle_logo"), UIImage(named: "kursiv_logo")]
@@ -125,12 +122,11 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
         fetchAndDisplayPersonPhotos()
         fetchAndDisplayPersonArticles()
         fetchAndListenPersonFeedbacks()
-        
-        
     }
 
     // MARK: Fetch data from firebase
     func fetchAndDisplayPersonDescription() -> Void {
+
         // [START read_data_once]
         ref.child("persons").child(personUID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
 
@@ -200,7 +196,16 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
         self.ref.child("person_feedbacks").child(personUID).observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
 
             if let value = snapshot.value as? NSDictionary {
-                self.feedbacks = value.allValues as! [[String: AnyObject]]
+                self.feedbacks = []
+                self.feedbackIds = []
+
+                for (fId, fData) in value {
+                    if (fData["flag_oc"]) != nil {
+                        continue
+                    }
+                    self.feedbacks.append(fData as! [String : AnyObject])
+                    self.feedbackIds.append(fId as! String)
+                }
                 self.feedbackTableView.reloadData()
             }
         })
@@ -224,7 +229,7 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
     }
 
     func updateFlagOffensiveContent(id: String) -> Void {
-        print("updateFlagOffensiveContent -- ", id)
+        ref.child("person_feedbacks").child(personUID).child(id).child("flag_oc").setValue(true)
     }
 
 
@@ -308,7 +313,8 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
 
             // Fetch feedback
             let feedback = self.feedbacks[indexPath.row] as [String: AnyObject]
-            
+            let feedbackId = self.feedbackIds[indexPath.row]
+
             let message = feedback["message"] as! String
             let followersNumber = feedback["friends_count"] as! Int
             let timestamp = feedback["timestamp"] as! String
@@ -318,13 +324,9 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
             cell.feedbackTextView.text = message
             cell.userFollowersNumberLabel.text = String(followersNumber)
             cell.dateLabel.text = dateAgo
-            // customization of label look
-            cell.userFollowersNumberLabel.addImage("followers", afterLabel: false)
-            cell.userFollowersNumberLabel.layer.borderColor = UIColor.clearColor().CGColor
-            cell.userFollowersNumberLabel.layer.borderWidth = 1
-            cell.userFollowersNumberLabel.layer.masksToBounds = true
-            cell.userFollowersNumberLabel.layer.cornerRadius = 10
-            
+            cell.offensiveContentButtonAction = { (cell) in
+                self.handleFlagOffensiveContent(feedbackId)
+            }
         }
         return UITableViewCell()
     }
@@ -377,7 +379,7 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
             print("Handle Yes logic here")
             self.updateFlagOffensiveContent(feedbackId)
         }))
-        
+
         alertController.addAction(UIAlertAction(title: "Отмена", style: .Cancel, handler: { (action: UIAlertAction!) in
             print("Handle Cancel")
         }))

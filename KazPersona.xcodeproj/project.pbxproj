@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52017DEF1D5C6F6E009EB9D4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52017DEE1D5C6F6E009EB9D4 /* WebViewController.swift */; };
+		520FBEA31D5CC6E6007DB210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520FBEA11D5CC6E6007DB210 /* Main.storyboard */; };
 		523F99691D5070D900483A70 /* linksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F99671D5070D900483A70 /* linksTableViewCell.swift */; };
 		523F996A1D5070D900483A70 /* linksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F99681D5070D900483A70 /* linksTableViewController.swift */; };
 		526D2A231D506BFB00BCFE6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 526D2A221D506BFB00BCFE6C /* GoogleService-Info.plist */; };
@@ -20,7 +21,6 @@
 		B4932AD01D5313DB002A8098 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4932ACF1D5313DB002A8098 /* LeaderboardTableViewCell.swift */; };
 		B4AD0AAB1D4B310B00E4E97F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD0AAA1D4B310B00E4E97F /* AppDelegate.swift */; };
 		B4AD0AAD1D4B310B00E4E97F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD0AAC1D4B310B00E4E97F /* ViewController.swift */; };
-		B4AD0AB01D4B310B00E4E97F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4AD0AAE1D4B310B00E4E97F /* Main.storyboard */; };
 		B4AD0AB21D4B310B00E4E97F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4AD0AB11D4B310B00E4E97F /* Assets.xcassets */; };
 		B4AD0AB51D4B310B00E4E97F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */; };
 		B4AD0AC01D4B310C00E4E97F /* KazPersonaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD0ABF1D4B310C00E4E97F /* KazPersonaUITests.swift */; };
@@ -48,6 +48,7 @@
 		45F31D79CBEE9D77C688A2B0 /* Pods-KazPersonaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazPersonaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KazPersonaUITests/Pods-KazPersonaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		52017DEE1D5C6F6E009EB9D4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		5201AD421D53151B00564859 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		520FBEA21D5CC6E6007DB210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		523F99671D5070D900483A70 /* linksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linksTableViewCell.swift; sourceTree = "<group>"; };
 		523F99681D5070D900483A70 /* linksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = linksTableViewController.swift; sourceTree = "<group>"; };
 		526D2A221D506BFB00BCFE6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -63,7 +64,6 @@
 		B4AD0AA71D4B310B00E4E97F /* KazPersona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KazPersona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AD0AAA1D4B310B00E4E97F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4AD0AAC1D4B310B00E4E97F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B4AD0AAF1D4B310B00E4E97F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4AD0AB11D4B310B00E4E97F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4AD0AB41D4B310B00E4E97F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4AD0AB61D4B310B00E4E97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,7 +141,6 @@
 				B4D13EBD1D4E4635003E1526 /* booksCollectionViewCell.swift */,
 				523F99671D5070D900483A70 /* linksTableViewCell.swift */,
 				523F99681D5070D900483A70 /* linksTableViewController.swift */,
-				B4AD0AAE1D4B310B00E4E97F /* Main.storyboard */,
 				B4C0A4E31D59CCDD0085FF48 /* InfoViewController.swift */,
 				B4C0A4E71D5A08580085FF48 /* UILabel+ImageAttachment.swift */,
 				B4C0A4DF1D5879580085FF48 /* SpeakerProfileImageCollectionViewCell.swift */,
@@ -150,6 +149,7 @@
 				B4932AC71D52451F002A8098 /* loginViewController.swift */,
 				52017DEE1D5C6F6E009EB9D4 /* WebViewController.swift */,
 				B4AD0AB11D4B310B00E4E97F /* Assets.xcassets */,
+				520FBEA11D5CC6E6007DB210 /* Main.storyboard */,
 				B4AD0AB31D4B310B00E4E97F /* LaunchScreen.storyboard */,
 				B4AD0AB61D4B310B00E4E97F /* Info.plist */,
 				5201AD421D53151B00564859 /* Bridging-Header.h */,
@@ -269,8 +269,8 @@
 			files = (
 				B4AD0AB51D4B310B00E4E97F /* LaunchScreen.storyboard in Resources */,
 				B4AD0AB21D4B310B00E4E97F /* Assets.xcassets in Resources */,
-				B4AD0AB01D4B310B00E4E97F /* Main.storyboard in Resources */,
 				526D2A231D506BFB00BCFE6C /* GoogleService-Info.plist in Resources */,
+				520FBEA31D5CC6E6007DB210 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,10 +405,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B4AD0AAE1D4B310B00E4E97F /* Main.storyboard */ = {
+		520FBEA11D5CC6E6007DB210 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B4AD0AAF1D4B310B00E4E97F /* Base */,
+				520FBEA21D5CC6E6007DB210 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -215,6 +215,10 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
         })
     }
 
+    func updateFlagOffensiveContent(id: String) -> Void {
+        print("updateFlagOffensiveContent -- ", id)
+    }
+
 
     // MARK: Collection View Data Source Methods
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -358,6 +362,28 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewData
 
     func textViewDidEndEditing(textView: UITextView) {
         self.leaveFeedbackTextView.text = leaveFeedbackPlaceholder
+    }
+
+    // MARK: custom handlers
+    func handleFlagOffensiveContent(feedbackId: String) -> Void {
+        // 1. ask
+        // 2. mark on server
+        // 3. filter data
+    
+        // [START display_alert_modal]
+        let alertController = UIAlertController(title: "Пожаловаться", message: "Вы действительно хотите отметить как недопустимый контент?", preferredStyle: UIAlertControllerStyle.Alert)
+
+        alertController.addAction(UIAlertAction(title: "Да", style: .Destructive, handler: { (action: UIAlertAction!) in
+            print("Handle Yes logic here")
+            self.updateFlagOffensiveContent(feedbackId)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Отмена", style: .Cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel")
+        }))
+
+        presentViewController(alertController, animated: true, completion: nil)
+        // [END display_alert_modal]
     }
 
     // MARK: error handlers
